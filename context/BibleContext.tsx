@@ -163,12 +163,37 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [indexRes, fullRes] = await Promise.all([
-          fetch('/bible_index.json'),
-          fetch('/bible_full.json')
-        ]);
+        const indexRes = await fetch('/bible_index.json');
         const indexData = await indexRes.json();
-        const fullData = await fullRes.json();
+        
+        // Load full Bible data by fetching individual book files
+        const fullData: BibleFull = { en: {}, hi: {} };
+        
+        // Load English books
+        for (const bookName of Object.keys(indexData)) {
+          try {
+            const bookRes = await fetch(`/data/en/${bookName.toLowerCase()}.json`);
+            if (bookRes.ok) {
+              fullData.en[bookName] = await bookRes.json();
+            }
+          } catch (e) {
+            console.warn(`Failed to load English book: ${bookName}`, e);
+          }
+        }
+        
+        // Load Hindi books
+        for (const bookName of Object.keys(indexData)) {
+          const hindiName = indexData[bookName].hi;
+          try {
+            const bookRes = await fetch(`/data/hi/${hindiName}.json`);
+            if (bookRes.ok) {
+              fullData.hi[hindiName] = await bookRes.json();
+            }
+          } catch (e) {
+            console.warn(`Failed to load Hindi book: ${hindiName}`, e);
+          }
+        }
+        
         dispatch({ type: 'SET_BIBLE_DATA', payload: { index: indexData, full: fullData } });
       } catch (error) {
         console.error('Error loading Bible data:', error);
