@@ -368,7 +368,7 @@ export default function LandingPage() {
               color: '#fff',
               textDecoration: 'none',
               fontSize: '14px',
-              fontWeight: 600',
+              fontWeight: 600,
               transition: 'all 0.2s'
             }}
             onMouseEnter={(e) => {
