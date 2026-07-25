@@ -166,34 +166,50 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
         const indexRes = await fetch('/bible_index.json');
         const indexData = await indexRes.json();
         
-        // Load full Bible data by fetching individual book files
+        // Load full Bible data by fetching individual book files in batches
         const fullData: BibleFull = { en: {}, hi: {} };
+        const bookNames = Object.keys(indexData);
         
-        // Load English books
-        for (const bookName of Object.keys(indexData)) {
-          try {
-            const bookRes = await fetch(`/data/en/${bookName.toLowerCase()}.json`);
-            if (bookRes.ok) {
-              fullData.en[bookName] = await bookRes.json();
-            }
-          } catch (e) {
-            console.warn(`Failed to load English book: ${bookName}`, e);
-          }
+        // Load English books in batches of 10 to avoid overwhelming
+        for (let i = 0; i < bookNames.length; i += 10) {
+          const batch = bookNames.slice(i, i + 10);
+          await Promise.all(
+            batch.map(async (bookName) => {
+              try {
+                const bookRes = await fetch(`/data/en/${bookName.toLowerCase()}.json`);
+                if (bookRes.ok) {
+                  fullData.en[bookName] = await bookRes.json();
+                } else {
+                  console.warn(`Failed to load English book: ${bookName} - ${bookRes.status}`);
+                }
+              } catch (e) {
+                console.warn(`Failed to load English book: ${bookName}`, e);
+              }
+            })
+          );
         }
         
-        // Load Hindi books
-        for (const bookName of Object.keys(indexData)) {
-          const hindiName = indexData[bookName].hi;
-          try {
-            const bookRes = await fetch(`/data/hi/${hindiName}.json`);
-            if (bookRes.ok) {
-              fullData.hi[hindiName] = await bookRes.json();
-            }
-          } catch (e) {
-            console.warn(`Failed to load Hindi book: ${hindiName}`, e);
-          }
+        // Load Hindi books in batches of 10
+        for (let i = 0; i < bookNames.length; i += 10) {
+          const batch = bookNames.slice(i, i + 10);
+          await Promise.all(
+            batch.map(async (bookName) => {
+              const hindiName = indexData[bookName].hi;
+              try {
+                const bookRes = await fetch(`/data/hi/${hindiName}.json`);
+                if (bookRes.ok) {
+                  fullData.hi[hindiName] = await bookRes.json();
+                } else {
+                  console.warn(`Failed to load Hindi book: ${hindiName} - ${bookRes.status}`);
+                }
+              } catch (e) {
+                console.warn(`Failed to load Hindi book: ${hindiName}`, e);
+              }
+            })
+          );
         }
         
+        console.log('Bible data loaded:', Object.keys(fullData.en).length, 'English books,', Object.keys(fullData.hi).length, 'Hindi books');
         dispatch({ type: 'SET_BIBLE_DATA', payload: { index: indexData, full: fullData } });
       } catch (error) {
         console.error('Error loading Bible data:', error);
