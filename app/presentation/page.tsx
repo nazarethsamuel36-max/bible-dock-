@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { renderVerseForPresentation, VerseSlide } from '../../lib/verseRenderer';
 
@@ -13,7 +13,7 @@ interface BibleVerseData {
   slideIndex?: number;
 }
 
-export default function PresentationPage() {
+function PresentationContent() {
   const searchParams = useSearchParams();
   const isPreview = searchParams.get('preview') === 'true'; // ?preview=true displays background
   const isBanner = searchParams.get('banner') === 'true'; // ?banner=true creates 30% height banner
@@ -227,5 +227,13 @@ export default function PresentationPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PresentationPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PresentationContent />
+    </Suspense>
   );
 }
