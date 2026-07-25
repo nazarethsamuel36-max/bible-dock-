@@ -1,20 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function LandingPage() {
-  const [origin, setOrigin] = useState<string>('http://localhost:3000');
   const [copiedDock, setCopiedDock] = useState<boolean>(false);
   const [copiedOverlay, setCopiedOverlay] = useState<boolean>(false);
   const [copiedOverlayPreview, setCopiedOverlayPreview] = useState<boolean>(false);
   const [copiedOverlayBanner, setCopiedOverlayBanner] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setOrigin(window.location.origin);
-    }
-  }, []);
 
   const copyToClipboard = (text: string, setCopiedState: (v: boolean) => void) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -23,10 +16,11 @@ export default function LandingPage() {
     });
   };
 
-  const dockUrl = `${origin}/dock`;
-  const overlayUrl = `${origin}/presentation`;
-  const overlayPreviewUrl = `${origin}/presentation?preview=true`;
-  const overlayBannerUrl = `${origin}/presentation?banner=true`;
+  const domain = 'https://hindienglishbible-dock.vercel.app';
+  const dockUrl = `${domain}/dock`;
+  const overlayUrl = `${domain}/presentation`;
+  const overlayPreviewUrl = `${domain}/presentation?preview=true`;
+  const overlayBannerUrl = `${domain}/presentation?banner=true`;
 
   return (
     <div style={{
