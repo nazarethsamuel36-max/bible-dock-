@@ -1,0 +1,5088 @@
+{
+  "Genesis": {
+    "hi": "उत्पत्ति",
+    "chapters": {
+      "1": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/genesis-1.json"
+      },
+      "2": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/genesis-2.json"
+      },
+      "3": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/genesis-3.json"
+      },
+      "4": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/genesis-4.json"
+      },
+      "5": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/genesis-5.json"
+      },
+      "6": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/genesis-6.json"
+      },
+      "7": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/genesis-7.json"
+      },
+      "8": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/genesis-8.json"
+      },
+      "9": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/genesis-9.json"
+      },
+      "10": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/genesis-10.json"
+      },
+      "11": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/genesis-11.json"
+      },
+      "12": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/genesis-12.json"
+      },
+      "13": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/genesis-13.json"
+      },
+      "14": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/genesis-14.json"
+      },
+      "15": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/genesis-15.json"
+      },
+      "16": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/genesis-16.json"
+      },
+      "17": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/genesis-17.json"
+      },
+      "18": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/genesis-18.json"
+      },
+      "19": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/genesis-19.json"
+      },
+      "20": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/genesis-20.json"
+      },
+      "21": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/genesis-21.json"
+      },
+      "22": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/genesis-22.json"
+      },
+      "23": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/genesis-23.json"
+      },
+      "24": {
+        "verseCount": 67,
+        "chapterFile": "/data/chapters/genesis-24.json"
+      },
+      "25": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/genesis-25.json"
+      },
+      "26": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/genesis-26.json"
+      },
+      "27": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/genesis-27.json"
+      },
+      "28": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/genesis-28.json"
+      },
+      "29": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/genesis-29.json"
+      },
+      "30": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/genesis-30.json"
+      },
+      "31": {
+        "verseCount": 55,
+        "chapterFile": "/data/chapters/genesis-31.json"
+      },
+      "32": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/genesis-32.json"
+      },
+      "33": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/genesis-33.json"
+      },
+      "34": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/genesis-34.json"
+      },
+      "35": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/genesis-35.json"
+      },
+      "36": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/genesis-36.json"
+      },
+      "37": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/genesis-37.json"
+      },
+      "38": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/genesis-38.json"
+      },
+      "39": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/genesis-39.json"
+      },
+      "40": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/genesis-40.json"
+      },
+      "41": {
+        "verseCount": 57,
+        "chapterFile": "/data/chapters/genesis-41.json"
+      },
+      "42": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/genesis-42.json"
+      },
+      "43": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/genesis-43.json"
+      },
+      "44": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/genesis-44.json"
+      },
+      "45": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/genesis-45.json"
+      },
+      "46": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/genesis-46.json"
+      },
+      "47": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/genesis-47.json"
+      },
+      "48": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/genesis-48.json"
+      },
+      "49": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/genesis-49.json"
+      },
+      "50": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/genesis-50.json"
+      }
+    }
+  },
+  "Exodus": {
+    "hi": "निर्गमन",
+    "chapters": {
+      "1": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/exodus-1.json"
+      },
+      "2": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/exodus-2.json"
+      },
+      "3": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/exodus-3.json"
+      },
+      "4": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/exodus-4.json"
+      },
+      "5": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/exodus-5.json"
+      },
+      "6": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/exodus-6.json"
+      },
+      "7": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/exodus-7.json"
+      },
+      "8": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/exodus-8.json"
+      },
+      "9": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/exodus-9.json"
+      },
+      "10": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/exodus-10.json"
+      },
+      "11": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/exodus-11.json"
+      },
+      "12": {
+        "verseCount": 51,
+        "chapterFile": "/data/chapters/exodus-12.json"
+      },
+      "13": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/exodus-13.json"
+      },
+      "14": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/exodus-14.json"
+      },
+      "15": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/exodus-15.json"
+      },
+      "16": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/exodus-16.json"
+      },
+      "17": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/exodus-17.json"
+      },
+      "18": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/exodus-18.json"
+      },
+      "19": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/exodus-19.json"
+      },
+      "20": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/exodus-20.json"
+      },
+      "21": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/exodus-21.json"
+      },
+      "22": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/exodus-22.json"
+      },
+      "23": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/exodus-23.json"
+      },
+      "24": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/exodus-24.json"
+      },
+      "25": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/exodus-25.json"
+      },
+      "26": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/exodus-26.json"
+      },
+      "27": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/exodus-27.json"
+      },
+      "28": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/exodus-28.json"
+      },
+      "29": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/exodus-29.json"
+      },
+      "30": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/exodus-30.json"
+      },
+      "31": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/exodus-31.json"
+      },
+      "32": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/exodus-32.json"
+      },
+      "33": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/exodus-33.json"
+      },
+      "34": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/exodus-34.json"
+      },
+      "35": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/exodus-35.json"
+      },
+      "36": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/exodus-36.json"
+      },
+      "37": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/exodus-37.json"
+      },
+      "38": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/exodus-38.json"
+      },
+      "39": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/exodus-39.json"
+      },
+      "40": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/exodus-40.json"
+      }
+    }
+  },
+  "Leviticus": {
+    "hi": "लैव्यव्यवस्था",
+    "chapters": {
+      "1": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/leviticus-1.json"
+      },
+      "2": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/leviticus-2.json"
+      },
+      "3": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/leviticus-3.json"
+      },
+      "4": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/leviticus-4.json"
+      },
+      "5": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/leviticus-5.json"
+      },
+      "6": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/leviticus-6.json"
+      },
+      "7": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/leviticus-7.json"
+      },
+      "8": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/leviticus-8.json"
+      },
+      "9": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/leviticus-9.json"
+      },
+      "10": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/leviticus-10.json"
+      },
+      "11": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/leviticus-11.json"
+      },
+      "12": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/leviticus-12.json"
+      },
+      "13": {
+        "verseCount": 59,
+        "chapterFile": "/data/chapters/leviticus-13.json"
+      },
+      "14": {
+        "verseCount": 57,
+        "chapterFile": "/data/chapters/leviticus-14.json"
+      },
+      "15": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/leviticus-15.json"
+      },
+      "16": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/leviticus-16.json"
+      },
+      "17": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/leviticus-17.json"
+      },
+      "18": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/leviticus-18.json"
+      },
+      "19": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/leviticus-19.json"
+      },
+      "20": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/leviticus-20.json"
+      },
+      "21": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/leviticus-21.json"
+      },
+      "22": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/leviticus-22.json"
+      },
+      "23": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/leviticus-23.json"
+      },
+      "24": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/leviticus-24.json"
+      },
+      "25": {
+        "verseCount": 55,
+        "chapterFile": "/data/chapters/leviticus-25.json"
+      },
+      "26": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/leviticus-26.json"
+      },
+      "27": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/leviticus-27.json"
+      }
+    }
+  },
+  "Numbers": {
+    "hi": "गिनती",
+    "chapters": {
+      "1": {
+        "verseCount": 54,
+        "chapterFile": "/data/chapters/numbers-1.json"
+      },
+      "2": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/numbers-2.json"
+      },
+      "3": {
+        "verseCount": 51,
+        "chapterFile": "/data/chapters/numbers-3.json"
+      },
+      "4": {
+        "verseCount": 49,
+        "chapterFile": "/data/chapters/numbers-4.json"
+      },
+      "5": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/numbers-5.json"
+      },
+      "6": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/numbers-6.json"
+      },
+      "7": {
+        "verseCount": 89,
+        "chapterFile": "/data/chapters/numbers-7.json"
+      },
+      "8": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/numbers-8.json"
+      },
+      "9": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/numbers-9.json"
+      },
+      "10": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/numbers-10.json"
+      },
+      "11": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/numbers-11.json"
+      },
+      "12": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/numbers-12.json"
+      },
+      "13": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/numbers-13.json"
+      },
+      "14": {
+        "verseCount": 45,
+        "chapterFile": "/data/chapters/numbers-14.json"
+      },
+      "15": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/numbers-15.json"
+      },
+      "16": {
+        "verseCount": 50,
+        "chapterFile": "/data/chapters/numbers-16.json"
+      },
+      "17": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/numbers-17.json"
+      },
+      "18": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/numbers-18.json"
+      },
+      "19": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/numbers-19.json"
+      },
+      "20": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/numbers-20.json"
+      },
+      "21": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/numbers-21.json"
+      },
+      "22": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/numbers-22.json"
+      },
+      "23": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/numbers-23.json"
+      },
+      "24": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/numbers-24.json"
+      },
+      "25": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/numbers-25.json"
+      },
+      "26": {
+        "verseCount": 65,
+        "chapterFile": "/data/chapters/numbers-26.json"
+      },
+      "27": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/numbers-27.json"
+      },
+      "28": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/numbers-28.json"
+      },
+      "29": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/numbers-29.json"
+      },
+      "30": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/numbers-30.json"
+      },
+      "31": {
+        "verseCount": 54,
+        "chapterFile": "/data/chapters/numbers-31.json"
+      },
+      "32": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/numbers-32.json"
+      },
+      "33": {
+        "verseCount": 56,
+        "chapterFile": "/data/chapters/numbers-33.json"
+      },
+      "34": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/numbers-34.json"
+      },
+      "35": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/numbers-35.json"
+      },
+      "36": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/numbers-36.json"
+      }
+    }
+  },
+  "Deuteronomy": {
+    "hi": "व्यवस्थाविवरण",
+    "chapters": {
+      "1": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/deuteronomy-1.json"
+      },
+      "2": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/deuteronomy-2.json"
+      },
+      "3": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/deuteronomy-3.json"
+      },
+      "4": {
+        "verseCount": 49,
+        "chapterFile": "/data/chapters/deuteronomy-4.json"
+      },
+      "5": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/deuteronomy-5.json"
+      },
+      "6": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/deuteronomy-6.json"
+      },
+      "7": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/deuteronomy-7.json"
+      },
+      "8": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/deuteronomy-8.json"
+      },
+      "9": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/deuteronomy-9.json"
+      },
+      "10": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/deuteronomy-10.json"
+      },
+      "11": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/deuteronomy-11.json"
+      },
+      "12": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/deuteronomy-12.json"
+      },
+      "13": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/deuteronomy-13.json"
+      },
+      "14": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/deuteronomy-14.json"
+      },
+      "15": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/deuteronomy-15.json"
+      },
+      "16": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/deuteronomy-16.json"
+      },
+      "17": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/deuteronomy-17.json"
+      },
+      "18": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/deuteronomy-18.json"
+      },
+      "19": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/deuteronomy-19.json"
+      },
+      "20": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/deuteronomy-20.json"
+      },
+      "21": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/deuteronomy-21.json"
+      },
+      "22": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/deuteronomy-22.json"
+      },
+      "23": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/deuteronomy-23.json"
+      },
+      "24": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/deuteronomy-24.json"
+      },
+      "25": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/deuteronomy-25.json"
+      },
+      "26": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/deuteronomy-26.json"
+      },
+      "27": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/deuteronomy-27.json"
+      },
+      "28": {
+        "verseCount": 68,
+        "chapterFile": "/data/chapters/deuteronomy-28.json"
+      },
+      "29": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/deuteronomy-29.json"
+      },
+      "30": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/deuteronomy-30.json"
+      },
+      "31": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/deuteronomy-31.json"
+      },
+      "32": {
+        "verseCount": 52,
+        "chapterFile": "/data/chapters/deuteronomy-32.json"
+      },
+      "33": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/deuteronomy-33.json"
+      },
+      "34": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/deuteronomy-34.json"
+      }
+    }
+  },
+  "Joshua": {
+    "hi": "यहोशू",
+    "chapters": {
+      "1": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/joshua-1.json"
+      },
+      "2": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/joshua-2.json"
+      },
+      "3": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/joshua-3.json"
+      },
+      "4": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/joshua-4.json"
+      },
+      "5": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/joshua-5.json"
+      },
+      "6": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/joshua-6.json"
+      },
+      "7": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/joshua-7.json"
+      },
+      "8": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/joshua-8.json"
+      },
+      "9": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/joshua-9.json"
+      },
+      "10": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/joshua-10.json"
+      },
+      "11": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/joshua-11.json"
+      },
+      "12": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/joshua-12.json"
+      },
+      "13": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/joshua-13.json"
+      },
+      "14": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/joshua-14.json"
+      },
+      "15": {
+        "verseCount": 63,
+        "chapterFile": "/data/chapters/joshua-15.json"
+      },
+      "16": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/joshua-16.json"
+      },
+      "17": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/joshua-17.json"
+      },
+      "18": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/joshua-18.json"
+      },
+      "19": {
+        "verseCount": 51,
+        "chapterFile": "/data/chapters/joshua-19.json"
+      },
+      "20": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/joshua-20.json"
+      },
+      "21": {
+        "verseCount": 45,
+        "chapterFile": "/data/chapters/joshua-21.json"
+      },
+      "22": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/joshua-22.json"
+      },
+      "23": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/joshua-23.json"
+      },
+      "24": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/joshua-24.json"
+      }
+    }
+  },
+  "Judges": {
+    "hi": "न्यायियों",
+    "chapters": {
+      "1": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/judges-1.json"
+      },
+      "2": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/judges-2.json"
+      },
+      "3": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/judges-3.json"
+      },
+      "4": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/judges-4.json"
+      },
+      "5": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/judges-5.json"
+      },
+      "6": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/judges-6.json"
+      },
+      "7": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/judges-7.json"
+      },
+      "8": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/judges-8.json"
+      },
+      "9": {
+        "verseCount": 57,
+        "chapterFile": "/data/chapters/judges-9.json"
+      },
+      "10": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/judges-10.json"
+      },
+      "11": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/judges-11.json"
+      },
+      "12": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/judges-12.json"
+      },
+      "13": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/judges-13.json"
+      },
+      "14": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/judges-14.json"
+      },
+      "15": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/judges-15.json"
+      },
+      "16": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/judges-16.json"
+      },
+      "17": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/judges-17.json"
+      },
+      "18": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/judges-18.json"
+      },
+      "19": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/judges-19.json"
+      },
+      "20": {
+        "verseCount": 48,
+        "chapterFile": "/data/chapters/judges-20.json"
+      },
+      "21": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/judges-21.json"
+      }
+    }
+  },
+  "Ruth": {
+    "hi": "रूत",
+    "chapters": {
+      "1": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/ruth-1.json"
+      },
+      "2": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/ruth-2.json"
+      },
+      "3": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/ruth-3.json"
+      },
+      "4": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/ruth-4.json"
+      }
+    }
+  },
+  "1 Samuel": {
+    "hi": "1 शमूएल",
+    "chapters": {
+      "1": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/1 samuel-1.json"
+      },
+      "2": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/1 samuel-2.json"
+      },
+      "3": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 samuel-3.json"
+      },
+      "4": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/1 samuel-4.json"
+      },
+      "5": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/1 samuel-5.json"
+      },
+      "6": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 samuel-6.json"
+      },
+      "7": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/1 samuel-7.json"
+      },
+      "8": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/1 samuel-8.json"
+      },
+      "9": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/1 samuel-9.json"
+      },
+      "10": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/1 samuel-10.json"
+      },
+      "11": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/1 samuel-11.json"
+      },
+      "12": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/1 samuel-12.json"
+      },
+      "13": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/1 samuel-13.json"
+      },
+      "14": {
+        "verseCount": 52,
+        "chapterFile": "/data/chapters/1 samuel-14.json"
+      },
+      "15": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/1 samuel-15.json"
+      },
+      "16": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/1 samuel-16.json"
+      },
+      "17": {
+        "verseCount": 58,
+        "chapterFile": "/data/chapters/1 samuel-17.json"
+      },
+      "18": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/1 samuel-18.json"
+      },
+      "19": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/1 samuel-19.json"
+      },
+      "20": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/1 samuel-20.json"
+      },
+      "21": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/1 samuel-21.json"
+      },
+      "22": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/1 samuel-22.json"
+      },
+      "23": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/1 samuel-23.json"
+      },
+      "24": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/1 samuel-24.json"
+      },
+      "25": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/1 samuel-25.json"
+      },
+      "26": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/1 samuel-26.json"
+      },
+      "27": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/1 samuel-27.json"
+      },
+      "28": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/1 samuel-28.json"
+      },
+      "29": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/1 samuel-29.json"
+      },
+      "30": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/1 samuel-30.json"
+      },
+      "31": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/1 samuel-31.json"
+      }
+    }
+  },
+  "2 Samuel": {
+    "hi": "2 शमूएल",
+    "chapters": {
+      "1": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 samuel-1.json"
+      },
+      "2": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/2 samuel-2.json"
+      },
+      "3": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/2 samuel-3.json"
+      },
+      "4": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/2 samuel-4.json"
+      },
+      "5": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/2 samuel-5.json"
+      },
+      "6": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/2 samuel-6.json"
+      },
+      "7": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/2 samuel-7.json"
+      },
+      "8": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 samuel-8.json"
+      },
+      "9": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/2 samuel-9.json"
+      },
+      "10": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/2 samuel-10.json"
+      },
+      "11": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 samuel-11.json"
+      },
+      "12": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/2 samuel-12.json"
+      },
+      "13": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/2 samuel-13.json"
+      },
+      "14": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/2 samuel-14.json"
+      },
+      "15": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/2 samuel-15.json"
+      },
+      "16": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/2 samuel-16.json"
+      },
+      "17": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/2 samuel-17.json"
+      },
+      "18": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/2 samuel-18.json"
+      },
+      "19": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/2 samuel-19.json"
+      },
+      "20": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/2 samuel-20.json"
+      },
+      "21": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/2 samuel-21.json"
+      },
+      "22": {
+        "verseCount": 51,
+        "chapterFile": "/data/chapters/2 samuel-22.json"
+      },
+      "23": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/2 samuel-23.json"
+      },
+      "24": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/2 samuel-24.json"
+      }
+    }
+  },
+  "1 Kings": {
+    "hi": "1 राजा",
+    "chapters": {
+      "1": {
+        "verseCount": 53,
+        "chapterFile": "/data/chapters/1 kings-1.json"
+      },
+      "2": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/1 kings-2.json"
+      },
+      "3": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/1 kings-3.json"
+      },
+      "4": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/1 kings-4.json"
+      },
+      "5": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/1 kings-5.json"
+      },
+      "6": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/1 kings-6.json"
+      },
+      "7": {
+        "verseCount": 51,
+        "chapterFile": "/data/chapters/1 kings-7.json"
+      },
+      "8": {
+        "verseCount": 66,
+        "chapterFile": "/data/chapters/1 kings-8.json"
+      },
+      "9": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/1 kings-9.json"
+      },
+      "10": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/1 kings-10.json"
+      },
+      "11": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/1 kings-11.json"
+      },
+      "12": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/1 kings-12.json"
+      },
+      "13": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/1 kings-13.json"
+      },
+      "14": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/1 kings-14.json"
+      },
+      "15": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/1 kings-15.json"
+      },
+      "16": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/1 kings-16.json"
+      },
+      "17": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/1 kings-17.json"
+      },
+      "18": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/1 kings-18.json"
+      },
+      "19": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 kings-19.json"
+      },
+      "20": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/1 kings-20.json"
+      },
+      "21": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/1 kings-21.json"
+      },
+      "22": {
+        "verseCount": 53,
+        "chapterFile": "/data/chapters/1 kings-22.json"
+      }
+    }
+  },
+  "2 Kings": {
+    "hi": "2 राजा",
+    "chapters": {
+      "1": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 kings-1.json"
+      },
+      "2": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/2 kings-2.json"
+      },
+      "3": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 kings-3.json"
+      },
+      "4": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/2 kings-4.json"
+      },
+      "5": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 kings-5.json"
+      },
+      "6": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/2 kings-6.json"
+      },
+      "7": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/2 kings-7.json"
+      },
+      "8": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/2 kings-8.json"
+      },
+      "9": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/2 kings-9.json"
+      },
+      "10": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/2 kings-10.json"
+      },
+      "11": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 kings-11.json"
+      },
+      "12": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 kings-12.json"
+      },
+      "13": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/2 kings-13.json"
+      },
+      "14": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/2 kings-14.json"
+      },
+      "15": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/2 kings-15.json"
+      },
+      "16": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/2 kings-16.json"
+      },
+      "17": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/2 kings-17.json"
+      },
+      "18": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/2 kings-18.json"
+      },
+      "19": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/2 kings-19.json"
+      },
+      "20": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 kings-20.json"
+      },
+      "21": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/2 kings-21.json"
+      },
+      "22": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/2 kings-22.json"
+      },
+      "23": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/2 kings-23.json"
+      },
+      "24": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/2 kings-24.json"
+      },
+      "25": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/2 kings-25.json"
+      }
+    }
+  },
+  "1 Chronicles": {
+    "hi": "1 इतिहास",
+    "chapters": {
+      "1": {
+        "verseCount": 54,
+        "chapterFile": "/data/chapters/1 chronicles-1.json"
+      },
+      "2": {
+        "verseCount": 55,
+        "chapterFile": "/data/chapters/1 chronicles-2.json"
+      },
+      "3": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/1 chronicles-3.json"
+      },
+      "4": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/1 chronicles-4.json"
+      },
+      "5": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/1 chronicles-5.json"
+      },
+      "6": {
+        "verseCount": 81,
+        "chapterFile": "/data/chapters/1 chronicles-6.json"
+      },
+      "7": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/1 chronicles-7.json"
+      },
+      "8": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/1 chronicles-8.json"
+      },
+      "9": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/1 chronicles-9.json"
+      },
+      "10": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/1 chronicles-10.json"
+      },
+      "11": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/1 chronicles-11.json"
+      },
+      "12": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/1 chronicles-12.json"
+      },
+      "13": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/1 chronicles-13.json"
+      },
+      "14": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/1 chronicles-14.json"
+      },
+      "15": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/1 chronicles-15.json"
+      },
+      "16": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/1 chronicles-16.json"
+      },
+      "17": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/1 chronicles-17.json"
+      },
+      "18": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/1 chronicles-18.json"
+      },
+      "19": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/1 chronicles-19.json"
+      },
+      "20": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/1 chronicles-20.json"
+      },
+      "21": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/1 chronicles-21.json"
+      },
+      "22": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/1 chronicles-22.json"
+      },
+      "23": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/1 chronicles-23.json"
+      },
+      "24": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/1 chronicles-24.json"
+      },
+      "25": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/1 chronicles-25.json"
+      },
+      "26": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/1 chronicles-26.json"
+      },
+      "27": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/1 chronicles-27.json"
+      },
+      "28": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 chronicles-28.json"
+      },
+      "29": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/1 chronicles-29.json"
+      }
+    }
+  },
+  "2 Chronicles": {
+    "hi": "2 इतिहास",
+    "chapters": {
+      "1": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/2 chronicles-1.json"
+      },
+      "2": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 chronicles-2.json"
+      },
+      "3": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/2 chronicles-3.json"
+      },
+      "4": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/2 chronicles-4.json"
+      },
+      "5": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/2 chronicles-5.json"
+      },
+      "6": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/2 chronicles-6.json"
+      },
+      "7": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/2 chronicles-7.json"
+      },
+      "8": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 chronicles-8.json"
+      },
+      "9": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/2 chronicles-9.json"
+      },
+      "10": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/2 chronicles-10.json"
+      },
+      "11": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/2 chronicles-11.json"
+      },
+      "12": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/2 chronicles-12.json"
+      },
+      "13": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/2 chronicles-13.json"
+      },
+      "14": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/2 chronicles-14.json"
+      },
+      "15": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/2 chronicles-15.json"
+      },
+      "16": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/2 chronicles-16.json"
+      },
+      "17": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/2 chronicles-17.json"
+      },
+      "18": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/2 chronicles-18.json"
+      },
+      "19": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/2 chronicles-19.json"
+      },
+      "20": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/2 chronicles-20.json"
+      },
+      "21": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/2 chronicles-21.json"
+      },
+      "22": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/2 chronicles-22.json"
+      },
+      "23": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 chronicles-23.json"
+      },
+      "24": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 chronicles-24.json"
+      },
+      "25": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/2 chronicles-25.json"
+      },
+      "26": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/2 chronicles-26.json"
+      },
+      "27": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/2 chronicles-27.json"
+      },
+      "28": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 chronicles-28.json"
+      },
+      "29": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/2 chronicles-29.json"
+      },
+      "30": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 chronicles-30.json"
+      },
+      "31": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 chronicles-31.json"
+      },
+      "32": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/2 chronicles-32.json"
+      },
+      "33": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/2 chronicles-33.json"
+      },
+      "34": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/2 chronicles-34.json"
+      },
+      "35": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/2 chronicles-35.json"
+      },
+      "36": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/2 chronicles-36.json"
+      }
+    }
+  },
+  "Ezra": {
+    "hi": "एज्रा",
+    "chapters": {
+      "1": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/ezra-1.json"
+      },
+      "2": {
+        "verseCount": 70,
+        "chapterFile": "/data/chapters/ezra-2.json"
+      },
+      "3": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/ezra-3.json"
+      },
+      "4": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/ezra-4.json"
+      },
+      "5": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/ezra-5.json"
+      },
+      "6": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/ezra-6.json"
+      },
+      "7": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/ezra-7.json"
+      },
+      "8": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/ezra-8.json"
+      },
+      "9": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/ezra-9.json"
+      },
+      "10": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/ezra-10.json"
+      }
+    }
+  },
+  "Nehemiah": {
+    "hi": "नहेम्याह",
+    "chapters": {
+      "1": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/nehemiah-1.json"
+      },
+      "2": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/nehemiah-2.json"
+      },
+      "3": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/nehemiah-3.json"
+      },
+      "4": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/nehemiah-4.json"
+      },
+      "5": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/nehemiah-5.json"
+      },
+      "6": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/nehemiah-6.json"
+      },
+      "7": {
+        "verseCount": 73,
+        "chapterFile": "/data/chapters/nehemiah-7.json"
+      },
+      "8": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/nehemiah-8.json"
+      },
+      "9": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/nehemiah-9.json"
+      },
+      "10": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/nehemiah-10.json"
+      },
+      "11": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/nehemiah-11.json"
+      },
+      "12": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/nehemiah-12.json"
+      },
+      "13": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/nehemiah-13.json"
+      }
+    }
+  },
+  "Esther": {
+    "hi": "एस्तेर",
+    "chapters": {
+      "1": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/esther-1.json"
+      },
+      "2": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/esther-2.json"
+      },
+      "3": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/esther-3.json"
+      },
+      "4": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/esther-4.json"
+      },
+      "5": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/esther-5.json"
+      },
+      "6": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/esther-6.json"
+      },
+      "7": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/esther-7.json"
+      },
+      "8": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/esther-8.json"
+      },
+      "9": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/esther-9.json"
+      },
+      "10": {
+        "verseCount": 3,
+        "chapterFile": "/data/chapters/esther-10.json"
+      }
+    }
+  },
+  "Job": {
+    "hi": "अय्यूब",
+    "chapters": {
+      "1": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/job-1.json"
+      },
+      "2": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/job-2.json"
+      },
+      "3": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/job-3.json"
+      },
+      "4": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/job-4.json"
+      },
+      "5": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/job-5.json"
+      },
+      "6": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/job-6.json"
+      },
+      "7": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/job-7.json"
+      },
+      "8": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/job-8.json"
+      },
+      "9": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/job-9.json"
+      },
+      "10": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/job-10.json"
+      },
+      "11": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/job-11.json"
+      },
+      "12": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/job-12.json"
+      },
+      "13": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/job-13.json"
+      },
+      "14": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/job-14.json"
+      },
+      "15": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/job-15.json"
+      },
+      "16": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/job-16.json"
+      },
+      "17": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/job-17.json"
+      },
+      "18": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/job-18.json"
+      },
+      "19": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/job-19.json"
+      },
+      "20": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/job-20.json"
+      },
+      "21": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/job-21.json"
+      },
+      "22": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/job-22.json"
+      },
+      "23": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/job-23.json"
+      },
+      "24": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/job-24.json"
+      },
+      "25": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/job-25.json"
+      },
+      "26": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/job-26.json"
+      },
+      "27": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/job-27.json"
+      },
+      "28": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/job-28.json"
+      },
+      "29": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/job-29.json"
+      },
+      "30": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/job-30.json"
+      },
+      "31": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/job-31.json"
+      },
+      "32": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/job-32.json"
+      },
+      "33": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/job-33.json"
+      },
+      "34": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/job-34.json"
+      },
+      "35": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/job-35.json"
+      },
+      "36": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/job-36.json"
+      },
+      "37": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/job-37.json"
+      },
+      "38": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/job-38.json"
+      },
+      "39": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/job-39.json"
+      },
+      "40": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/job-40.json"
+      },
+      "41": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/job-41.json"
+      },
+      "42": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/job-42.json"
+      }
+    }
+  },
+  "Psalms": {
+    "hi": "भजन संहिता",
+    "chapters": {
+      "1": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/psalms-1.json"
+      },
+      "2": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-2.json"
+      },
+      "3": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-3.json"
+      },
+      "4": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-4.json"
+      },
+      "5": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-5.json"
+      },
+      "6": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-6.json"
+      },
+      "7": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/psalms-7.json"
+      },
+      "8": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-8.json"
+      },
+      "9": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/psalms-9.json"
+      },
+      "10": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/psalms-10.json"
+      },
+      "11": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-11.json"
+      },
+      "12": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-12.json"
+      },
+      "13": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/psalms-13.json"
+      },
+      "14": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-14.json"
+      },
+      "15": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/psalms-15.json"
+      },
+      "16": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-16.json"
+      },
+      "17": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/psalms-17.json"
+      },
+      "18": {
+        "verseCount": 50,
+        "chapterFile": "/data/chapters/psalms-18.json"
+      },
+      "19": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/psalms-19.json"
+      },
+      "20": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-20.json"
+      },
+      "21": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-21.json"
+      },
+      "22": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/psalms-22.json"
+      },
+      "23": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/psalms-23.json"
+      },
+      "24": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-24.json"
+      },
+      "25": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/psalms-25.json"
+      },
+      "26": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-26.json"
+      },
+      "27": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/psalms-27.json"
+      },
+      "28": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-28.json"
+      },
+      "29": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-29.json"
+      },
+      "30": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-30.json"
+      },
+      "31": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/psalms-31.json"
+      },
+      "32": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-32.json"
+      },
+      "33": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/psalms-33.json"
+      },
+      "34": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/psalms-34.json"
+      },
+      "35": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/psalms-35.json"
+      },
+      "36": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-36.json"
+      },
+      "37": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/psalms-37.json"
+      },
+      "38": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/psalms-38.json"
+      },
+      "39": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-39.json"
+      },
+      "40": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/psalms-40.json"
+      },
+      "41": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-41.json"
+      },
+      "42": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-42.json"
+      },
+      "43": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/psalms-43.json"
+      },
+      "44": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/psalms-44.json"
+      },
+      "45": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/psalms-45.json"
+      },
+      "46": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-46.json"
+      },
+      "47": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-47.json"
+      },
+      "48": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/psalms-48.json"
+      },
+      "49": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/psalms-49.json"
+      },
+      "50": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/psalms-50.json"
+      },
+      "51": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/psalms-51.json"
+      },
+      "52": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-52.json"
+      },
+      "53": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/psalms-53.json"
+      },
+      "54": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-54.json"
+      },
+      "55": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/psalms-55.json"
+      },
+      "56": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-56.json"
+      },
+      "57": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-57.json"
+      },
+      "58": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-58.json"
+      },
+      "59": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/psalms-59.json"
+      },
+      "60": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-60.json"
+      },
+      "61": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-61.json"
+      },
+      "62": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-62.json"
+      },
+      "63": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-63.json"
+      },
+      "64": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-64.json"
+      },
+      "65": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-65.json"
+      },
+      "66": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/psalms-66.json"
+      },
+      "67": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-67.json"
+      },
+      "68": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/psalms-68.json"
+      },
+      "69": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/psalms-69.json"
+      },
+      "70": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/psalms-70.json"
+      },
+      "71": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/psalms-71.json"
+      },
+      "72": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/psalms-72.json"
+      },
+      "73": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/psalms-73.json"
+      },
+      "74": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/psalms-74.json"
+      },
+      "75": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-75.json"
+      },
+      "76": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-76.json"
+      },
+      "77": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/psalms-77.json"
+      },
+      "78": {
+        "verseCount": 72,
+        "chapterFile": "/data/chapters/psalms-78.json"
+      },
+      "79": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-79.json"
+      },
+      "80": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/psalms-80.json"
+      },
+      "81": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/psalms-81.json"
+      },
+      "82": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-82.json"
+      },
+      "83": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/psalms-83.json"
+      },
+      "84": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-84.json"
+      },
+      "85": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-85.json"
+      },
+      "86": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/psalms-86.json"
+      },
+      "87": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-87.json"
+      },
+      "88": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/psalms-88.json"
+      },
+      "89": {
+        "verseCount": 52,
+        "chapterFile": "/data/chapters/psalms-89.json"
+      },
+      "90": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/psalms-90.json"
+      },
+      "91": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/psalms-91.json"
+      },
+      "92": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/psalms-92.json"
+      },
+      "93": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/psalms-93.json"
+      },
+      "94": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/psalms-94.json"
+      },
+      "95": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/psalms-95.json"
+      },
+      "96": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-96.json"
+      },
+      "97": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-97.json"
+      },
+      "98": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-98.json"
+      },
+      "99": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-99.json"
+      },
+      "100": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/psalms-100.json"
+      },
+      "101": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-101.json"
+      },
+      "102": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/psalms-102.json"
+      },
+      "103": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/psalms-103.json"
+      },
+      "104": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/psalms-104.json"
+      },
+      "105": {
+        "verseCount": 45,
+        "chapterFile": "/data/chapters/psalms-105.json"
+      },
+      "106": {
+        "verseCount": 48,
+        "chapterFile": "/data/chapters/psalms-106.json"
+      },
+      "107": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/psalms-107.json"
+      },
+      "108": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-108.json"
+      },
+      "109": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/psalms-109.json"
+      },
+      "110": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-110.json"
+      },
+      "111": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-111.json"
+      },
+      "112": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-112.json"
+      },
+      "113": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-113.json"
+      },
+      "114": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-114.json"
+      },
+      "115": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/psalms-115.json"
+      },
+      "116": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/psalms-116.json"
+      },
+      "117": {
+        "verseCount": 2,
+        "chapterFile": "/data/chapters/psalms-117.json"
+      },
+      "118": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/psalms-118.json"
+      },
+      "119": {
+        "verseCount": 176,
+        "chapterFile": "/data/chapters/psalms-119.json"
+      },
+      "120": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-120.json"
+      },
+      "121": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-121.json"
+      },
+      "122": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-122.json"
+      },
+      "123": {
+        "verseCount": 4,
+        "chapterFile": "/data/chapters/psalms-123.json"
+      },
+      "124": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-124.json"
+      },
+      "125": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/psalms-125.json"
+      },
+      "126": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/psalms-126.json"
+      },
+      "127": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/psalms-127.json"
+      },
+      "128": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/psalms-128.json"
+      },
+      "129": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-129.json"
+      },
+      "130": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-130.json"
+      },
+      "131": {
+        "verseCount": 3,
+        "chapterFile": "/data/chapters/psalms-131.json"
+      },
+      "132": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/psalms-132.json"
+      },
+      "133": {
+        "verseCount": 3,
+        "chapterFile": "/data/chapters/psalms-133.json"
+      },
+      "134": {
+        "verseCount": 3,
+        "chapterFile": "/data/chapters/psalms-134.json"
+      },
+      "135": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/psalms-135.json"
+      },
+      "136": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/psalms-136.json"
+      },
+      "137": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-137.json"
+      },
+      "138": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/psalms-138.json"
+      },
+      "139": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/psalms-139.json"
+      },
+      "140": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/psalms-140.json"
+      },
+      "141": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-141.json"
+      },
+      "142": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/psalms-142.json"
+      },
+      "143": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/psalms-143.json"
+      },
+      "144": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/psalms-144.json"
+      },
+      "145": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/psalms-145.json"
+      },
+      "146": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/psalms-146.json"
+      },
+      "147": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/psalms-147.json"
+      },
+      "148": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/psalms-148.json"
+      },
+      "149": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/psalms-149.json"
+      },
+      "150": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/psalms-150.json"
+      }
+    }
+  },
+  "Proverbs": {
+    "hi": "नीतिवचन",
+    "chapters": {
+      "1": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/proverbs-1.json"
+      },
+      "2": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/proverbs-2.json"
+      },
+      "3": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/proverbs-3.json"
+      },
+      "4": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/proverbs-4.json"
+      },
+      "5": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/proverbs-5.json"
+      },
+      "6": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/proverbs-6.json"
+      },
+      "7": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/proverbs-7.json"
+      },
+      "8": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/proverbs-8.json"
+      },
+      "9": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/proverbs-9.json"
+      },
+      "10": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/proverbs-10.json"
+      },
+      "11": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/proverbs-11.json"
+      },
+      "12": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/proverbs-12.json"
+      },
+      "13": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/proverbs-13.json"
+      },
+      "14": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/proverbs-14.json"
+      },
+      "15": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/proverbs-15.json"
+      },
+      "16": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/proverbs-16.json"
+      },
+      "17": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/proverbs-17.json"
+      },
+      "18": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/proverbs-18.json"
+      },
+      "19": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/proverbs-19.json"
+      },
+      "20": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/proverbs-20.json"
+      },
+      "21": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/proverbs-21.json"
+      },
+      "22": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/proverbs-22.json"
+      },
+      "23": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/proverbs-23.json"
+      },
+      "24": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/proverbs-24.json"
+      },
+      "25": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/proverbs-25.json"
+      },
+      "26": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/proverbs-26.json"
+      },
+      "27": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/proverbs-27.json"
+      },
+      "28": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/proverbs-28.json"
+      },
+      "29": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/proverbs-29.json"
+      },
+      "30": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/proverbs-30.json"
+      },
+      "31": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/proverbs-31.json"
+      }
+    }
+  },
+  "Ecclesiastes": {
+    "hi": "सभोपदेशक",
+    "chapters": {
+      "1": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/ecclesiastes-1.json"
+      },
+      "2": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/ecclesiastes-2.json"
+      },
+      "3": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/ecclesiastes-3.json"
+      },
+      "4": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/ecclesiastes-4.json"
+      },
+      "5": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/ecclesiastes-5.json"
+      },
+      "6": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/ecclesiastes-6.json"
+      },
+      "7": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/ecclesiastes-7.json"
+      },
+      "8": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/ecclesiastes-8.json"
+      },
+      "9": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/ecclesiastes-9.json"
+      },
+      "10": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/ecclesiastes-10.json"
+      },
+      "11": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/ecclesiastes-11.json"
+      },
+      "12": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/ecclesiastes-12.json"
+      }
+    }
+  },
+  "Song of Solomon": {
+    "hi": "श्रेष्ठगीत",
+    "chapters": {
+      "1": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/song of solomon-1.json"
+      },
+      "2": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/song of solomon-2.json"
+      },
+      "3": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/song of solomon-3.json"
+      },
+      "4": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/song of solomon-4.json"
+      },
+      "5": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/song of solomon-5.json"
+      },
+      "6": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/song of solomon-6.json"
+      },
+      "7": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/song of solomon-7.json"
+      },
+      "8": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/song of solomon-8.json"
+      }
+    }
+  },
+  "Isaiah": {
+    "hi": "यशायाह",
+    "chapters": {
+      "1": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/isaiah-1.json"
+      },
+      "2": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/isaiah-2.json"
+      },
+      "3": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/isaiah-3.json"
+      },
+      "4": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/isaiah-4.json"
+      },
+      "5": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/isaiah-5.json"
+      },
+      "6": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/isaiah-6.json"
+      },
+      "7": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/isaiah-7.json"
+      },
+      "8": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/isaiah-8.json"
+      },
+      "9": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/isaiah-9.json"
+      },
+      "10": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/isaiah-10.json"
+      },
+      "11": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/isaiah-11.json"
+      },
+      "12": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/isaiah-12.json"
+      },
+      "13": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/isaiah-13.json"
+      },
+      "14": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/isaiah-14.json"
+      },
+      "15": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/isaiah-15.json"
+      },
+      "16": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/isaiah-16.json"
+      },
+      "17": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/isaiah-17.json"
+      },
+      "18": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/isaiah-18.json"
+      },
+      "19": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/isaiah-19.json"
+      },
+      "20": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/isaiah-20.json"
+      },
+      "21": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/isaiah-21.json"
+      },
+      "22": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/isaiah-22.json"
+      },
+      "23": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/isaiah-23.json"
+      },
+      "24": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/isaiah-24.json"
+      },
+      "25": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/isaiah-25.json"
+      },
+      "26": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/isaiah-26.json"
+      },
+      "27": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/isaiah-27.json"
+      },
+      "28": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/isaiah-28.json"
+      },
+      "29": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/isaiah-29.json"
+      },
+      "30": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/isaiah-30.json"
+      },
+      "31": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/isaiah-31.json"
+      },
+      "32": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/isaiah-32.json"
+      },
+      "33": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/isaiah-33.json"
+      },
+      "34": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/isaiah-34.json"
+      },
+      "35": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/isaiah-35.json"
+      },
+      "36": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/isaiah-36.json"
+      },
+      "37": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/isaiah-37.json"
+      },
+      "38": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/isaiah-38.json"
+      },
+      "39": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/isaiah-39.json"
+      },
+      "40": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/isaiah-40.json"
+      },
+      "41": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/isaiah-41.json"
+      },
+      "42": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/isaiah-42.json"
+      },
+      "43": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/isaiah-43.json"
+      },
+      "44": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/isaiah-44.json"
+      },
+      "45": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/isaiah-45.json"
+      },
+      "46": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/isaiah-46.json"
+      },
+      "47": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/isaiah-47.json"
+      },
+      "48": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/isaiah-48.json"
+      },
+      "49": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/isaiah-49.json"
+      },
+      "50": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/isaiah-50.json"
+      },
+      "51": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/isaiah-51.json"
+      },
+      "52": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/isaiah-52.json"
+      },
+      "53": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/isaiah-53.json"
+      },
+      "54": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/isaiah-54.json"
+      },
+      "55": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/isaiah-55.json"
+      },
+      "56": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/isaiah-56.json"
+      },
+      "57": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/isaiah-57.json"
+      },
+      "58": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/isaiah-58.json"
+      },
+      "59": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/isaiah-59.json"
+      },
+      "60": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/isaiah-60.json"
+      },
+      "61": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/isaiah-61.json"
+      },
+      "62": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/isaiah-62.json"
+      },
+      "63": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/isaiah-63.json"
+      },
+      "64": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/isaiah-64.json"
+      },
+      "65": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/isaiah-65.json"
+      },
+      "66": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/isaiah-66.json"
+      }
+    }
+  },
+  "Jeremiah": {
+    "hi": "यिर्मयाह",
+    "chapters": {
+      "1": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/jeremiah-1.json"
+      },
+      "2": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/jeremiah-2.json"
+      },
+      "3": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/jeremiah-3.json"
+      },
+      "4": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/jeremiah-4.json"
+      },
+      "5": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/jeremiah-5.json"
+      },
+      "6": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/jeremiah-6.json"
+      },
+      "7": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/jeremiah-7.json"
+      },
+      "8": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/jeremiah-8.json"
+      },
+      "9": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/jeremiah-9.json"
+      },
+      "10": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/jeremiah-10.json"
+      },
+      "11": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/jeremiah-11.json"
+      },
+      "12": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/jeremiah-12.json"
+      },
+      "13": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/jeremiah-13.json"
+      },
+      "14": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/jeremiah-14.json"
+      },
+      "15": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/jeremiah-15.json"
+      },
+      "16": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/jeremiah-16.json"
+      },
+      "17": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/jeremiah-17.json"
+      },
+      "18": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/jeremiah-18.json"
+      },
+      "19": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/jeremiah-19.json"
+      },
+      "20": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/jeremiah-20.json"
+      },
+      "21": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/jeremiah-21.json"
+      },
+      "22": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/jeremiah-22.json"
+      },
+      "23": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/jeremiah-23.json"
+      },
+      "24": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/jeremiah-24.json"
+      },
+      "25": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/jeremiah-25.json"
+      },
+      "26": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/jeremiah-26.json"
+      },
+      "27": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/jeremiah-27.json"
+      },
+      "28": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/jeremiah-28.json"
+      },
+      "29": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/jeremiah-29.json"
+      },
+      "30": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/jeremiah-30.json"
+      },
+      "31": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/jeremiah-31.json"
+      },
+      "32": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/jeremiah-32.json"
+      },
+      "33": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/jeremiah-33.json"
+      },
+      "34": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/jeremiah-34.json"
+      },
+      "35": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/jeremiah-35.json"
+      },
+      "36": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/jeremiah-36.json"
+      },
+      "37": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/jeremiah-37.json"
+      },
+      "38": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/jeremiah-38.json"
+      },
+      "39": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/jeremiah-39.json"
+      },
+      "40": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/jeremiah-40.json"
+      },
+      "41": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/jeremiah-41.json"
+      },
+      "42": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/jeremiah-42.json"
+      },
+      "43": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/jeremiah-43.json"
+      },
+      "44": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/jeremiah-44.json"
+      },
+      "45": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/jeremiah-45.json"
+      },
+      "46": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/jeremiah-46.json"
+      },
+      "47": {
+        "verseCount": 7,
+        "chapterFile": "/data/chapters/jeremiah-47.json"
+      },
+      "48": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/jeremiah-48.json"
+      },
+      "49": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/jeremiah-49.json"
+      },
+      "50": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/jeremiah-50.json"
+      },
+      "51": {
+        "verseCount": 64,
+        "chapterFile": "/data/chapters/jeremiah-51.json"
+      },
+      "52": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/jeremiah-52.json"
+      }
+    }
+  },
+  "Lamentations": {
+    "hi": "विलापगीत",
+    "chapters": {
+      "1": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/lamentations-1.json"
+      },
+      "2": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/lamentations-2.json"
+      },
+      "3": {
+        "verseCount": 66,
+        "chapterFile": "/data/chapters/lamentations-3.json"
+      },
+      "4": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/lamentations-4.json"
+      },
+      "5": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/lamentations-5.json"
+      }
+    }
+  },
+  "Ezekiel": {
+    "hi": "यहेजकेल",
+    "chapters": {
+      "1": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/ezekiel-1.json"
+      },
+      "2": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/ezekiel-2.json"
+      },
+      "3": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/ezekiel-3.json"
+      },
+      "4": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/ezekiel-4.json"
+      },
+      "5": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/ezekiel-5.json"
+      },
+      "6": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/ezekiel-6.json"
+      },
+      "7": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/ezekiel-7.json"
+      },
+      "8": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/ezekiel-8.json"
+      },
+      "9": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/ezekiel-9.json"
+      },
+      "10": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/ezekiel-10.json"
+      },
+      "11": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/ezekiel-11.json"
+      },
+      "12": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/ezekiel-12.json"
+      },
+      "13": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/ezekiel-13.json"
+      },
+      "14": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/ezekiel-14.json"
+      },
+      "15": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/ezekiel-15.json"
+      },
+      "16": {
+        "verseCount": 63,
+        "chapterFile": "/data/chapters/ezekiel-16.json"
+      },
+      "17": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/ezekiel-17.json"
+      },
+      "18": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/ezekiel-18.json"
+      },
+      "19": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/ezekiel-19.json"
+      },
+      "20": {
+        "verseCount": 49,
+        "chapterFile": "/data/chapters/ezekiel-20.json"
+      },
+      "21": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/ezekiel-21.json"
+      },
+      "22": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/ezekiel-22.json"
+      },
+      "23": {
+        "verseCount": 49,
+        "chapterFile": "/data/chapters/ezekiel-23.json"
+      },
+      "24": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/ezekiel-24.json"
+      },
+      "25": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/ezekiel-25.json"
+      },
+      "26": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/ezekiel-26.json"
+      },
+      "27": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/ezekiel-27.json"
+      },
+      "28": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/ezekiel-28.json"
+      },
+      "29": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/ezekiel-29.json"
+      },
+      "30": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/ezekiel-30.json"
+      },
+      "31": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/ezekiel-31.json"
+      },
+      "32": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/ezekiel-32.json"
+      },
+      "33": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/ezekiel-33.json"
+      },
+      "34": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/ezekiel-34.json"
+      },
+      "35": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/ezekiel-35.json"
+      },
+      "36": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/ezekiel-36.json"
+      },
+      "37": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/ezekiel-37.json"
+      },
+      "38": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/ezekiel-38.json"
+      },
+      "39": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/ezekiel-39.json"
+      },
+      "40": {
+        "verseCount": 49,
+        "chapterFile": "/data/chapters/ezekiel-40.json"
+      },
+      "41": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/ezekiel-41.json"
+      },
+      "42": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/ezekiel-42.json"
+      },
+      "43": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/ezekiel-43.json"
+      },
+      "44": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/ezekiel-44.json"
+      },
+      "45": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/ezekiel-45.json"
+      },
+      "46": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/ezekiel-46.json"
+      },
+      "47": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/ezekiel-47.json"
+      },
+      "48": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/ezekiel-48.json"
+      }
+    }
+  },
+  "Daniel": {
+    "hi": "दानिय्येल",
+    "chapters": {
+      "1": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/daniel-1.json"
+      },
+      "2": {
+        "verseCount": 49,
+        "chapterFile": "/data/chapters/daniel-2.json"
+      },
+      "3": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/daniel-3.json"
+      },
+      "4": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/daniel-4.json"
+      },
+      "5": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/daniel-5.json"
+      },
+      "6": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/daniel-6.json"
+      },
+      "7": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/daniel-7.json"
+      },
+      "8": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/daniel-8.json"
+      },
+      "9": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/daniel-9.json"
+      },
+      "10": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/daniel-10.json"
+      },
+      "11": {
+        "verseCount": 45,
+        "chapterFile": "/data/chapters/daniel-11.json"
+      },
+      "12": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/daniel-12.json"
+      }
+    }
+  },
+  "Hosea": {
+    "hi": "होशे",
+    "chapters": {
+      "1": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/hosea-1.json"
+      },
+      "2": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/hosea-2.json"
+      },
+      "3": {
+        "verseCount": 5,
+        "chapterFile": "/data/chapters/hosea-3.json"
+      },
+      "4": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/hosea-4.json"
+      },
+      "5": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/hosea-5.json"
+      },
+      "6": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/hosea-6.json"
+      },
+      "7": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/hosea-7.json"
+      },
+      "8": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/hosea-8.json"
+      },
+      "9": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/hosea-9.json"
+      },
+      "10": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/hosea-10.json"
+      },
+      "11": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/hosea-11.json"
+      },
+      "12": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/hosea-12.json"
+      },
+      "13": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/hosea-13.json"
+      },
+      "14": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/hosea-14.json"
+      }
+    }
+  },
+  "Joel": {
+    "hi": "योएल",
+    "chapters": {
+      "1": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/joel-1.json"
+      },
+      "2": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/joel-2.json"
+      },
+      "3": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/joel-3.json"
+      }
+    }
+  },
+  "Amos": {
+    "hi": "आमोस",
+    "chapters": {
+      "1": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/amos-1.json"
+      },
+      "2": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/amos-2.json"
+      },
+      "3": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/amos-3.json"
+      },
+      "4": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/amos-4.json"
+      },
+      "5": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/amos-5.json"
+      },
+      "6": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/amos-6.json"
+      },
+      "7": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/amos-7.json"
+      },
+      "8": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/amos-8.json"
+      },
+      "9": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/amos-9.json"
+      }
+    }
+  },
+  "Obadiah": {
+    "hi": "ओबद्दाह",
+    "chapters": {
+      "1": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/obadiah-1.json"
+      }
+    }
+  },
+  "Jonah": {
+    "hi": "योना",
+    "chapters": {
+      "1": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/jonah-1.json"
+      },
+      "2": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/jonah-2.json"
+      },
+      "3": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/jonah-3.json"
+      },
+      "4": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/jonah-4.json"
+      }
+    }
+  },
+  "Micah": {
+    "hi": "मीका",
+    "chapters": {
+      "1": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/micah-1.json"
+      },
+      "2": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/micah-2.json"
+      },
+      "3": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/micah-3.json"
+      },
+      "4": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/micah-4.json"
+      },
+      "5": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/micah-5.json"
+      },
+      "6": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/micah-6.json"
+      },
+      "7": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/micah-7.json"
+      }
+    }
+  },
+  "Nahum": {
+    "hi": "नहूम",
+    "chapters": {
+      "1": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/nahum-1.json"
+      },
+      "2": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/nahum-2.json"
+      },
+      "3": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/nahum-3.json"
+      }
+    }
+  },
+  "Habakkuk": {
+    "hi": "हबक्कूक",
+    "chapters": {
+      "1": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/habakkuk-1.json"
+      },
+      "2": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/habakkuk-2.json"
+      },
+      "3": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/habakkuk-3.json"
+      }
+    }
+  },
+  "Zephaniah": {
+    "hi": "सपन्याह",
+    "chapters": {
+      "1": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/zephaniah-1.json"
+      },
+      "2": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/zephaniah-2.json"
+      },
+      "3": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/zephaniah-3.json"
+      }
+    }
+  },
+  "Haggai": {
+    "hi": "हाग्गै",
+    "chapters": {
+      "1": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/haggai-1.json"
+      },
+      "2": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/haggai-2.json"
+      }
+    }
+  },
+  "Zechariah": {
+    "hi": "जकर्याह",
+    "chapters": {
+      "1": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/zechariah-1.json"
+      },
+      "2": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/zechariah-2.json"
+      },
+      "3": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/zechariah-3.json"
+      },
+      "4": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/zechariah-4.json"
+      },
+      "5": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/zechariah-5.json"
+      },
+      "6": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/zechariah-6.json"
+      },
+      "7": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/zechariah-7.json"
+      },
+      "8": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/zechariah-8.json"
+      },
+      "9": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/zechariah-9.json"
+      },
+      "10": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/zechariah-10.json"
+      },
+      "11": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/zechariah-11.json"
+      },
+      "12": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/zechariah-12.json"
+      },
+      "13": {
+        "verseCount": 9,
+        "chapterFile": "/data/chapters/zechariah-13.json"
+      },
+      "14": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/zechariah-14.json"
+      }
+    }
+  },
+  "Malachi": {
+    "hi": "मलाकी",
+    "chapters": {
+      "1": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/malachi-1.json"
+      },
+      "2": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/malachi-2.json"
+      },
+      "3": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/malachi-3.json"
+      },
+      "4": {
+        "verseCount": 6,
+        "chapterFile": "/data/chapters/malachi-4.json"
+      }
+    }
+  },
+  "Matthew": {
+    "hi": "मत्ती",
+    "chapters": {
+      "1": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/matthew-1.json"
+      },
+      "2": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/matthew-2.json"
+      },
+      "3": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/matthew-3.json"
+      },
+      "4": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/matthew-4.json"
+      },
+      "5": {
+        "verseCount": 48,
+        "chapterFile": "/data/chapters/matthew-5.json"
+      },
+      "6": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/matthew-6.json"
+      },
+      "7": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/matthew-7.json"
+      },
+      "8": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/matthew-8.json"
+      },
+      "9": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/matthew-9.json"
+      },
+      "10": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/matthew-10.json"
+      },
+      "11": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/matthew-11.json"
+      },
+      "12": {
+        "verseCount": 50,
+        "chapterFile": "/data/chapters/matthew-12.json"
+      },
+      "13": {
+        "verseCount": 58,
+        "chapterFile": "/data/chapters/matthew-13.json"
+      },
+      "14": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/matthew-14.json"
+      },
+      "15": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/matthew-15.json"
+      },
+      "16": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/matthew-16.json"
+      },
+      "17": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/matthew-17.json"
+      },
+      "18": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/matthew-18.json"
+      },
+      "19": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/matthew-19.json"
+      },
+      "20": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/matthew-20.json"
+      },
+      "21": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/matthew-21.json"
+      },
+      "22": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/matthew-22.json"
+      },
+      "23": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/matthew-23.json"
+      },
+      "24": {
+        "verseCount": 51,
+        "chapterFile": "/data/chapters/matthew-24.json"
+      },
+      "25": {
+        "verseCount": 46,
+        "chapterFile": "/data/chapters/matthew-25.json"
+      },
+      "26": {
+        "verseCount": 75,
+        "chapterFile": "/data/chapters/matthew-26.json"
+      },
+      "27": {
+        "verseCount": 66,
+        "chapterFile": "/data/chapters/matthew-27.json"
+      },
+      "28": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/matthew-28.json"
+      }
+    }
+  },
+  "Mark": {
+    "hi": "मरकुस",
+    "chapters": {
+      "1": {
+        "verseCount": 45,
+        "chapterFile": "/data/chapters/mark-1.json"
+      },
+      "2": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/mark-2.json"
+      },
+      "3": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/mark-3.json"
+      },
+      "4": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/mark-4.json"
+      },
+      "5": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/mark-5.json"
+      },
+      "6": {
+        "verseCount": 56,
+        "chapterFile": "/data/chapters/mark-6.json"
+      },
+      "7": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/mark-7.json"
+      },
+      "8": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/mark-8.json"
+      },
+      "9": {
+        "verseCount": 50,
+        "chapterFile": "/data/chapters/mark-9.json"
+      },
+      "10": {
+        "verseCount": 52,
+        "chapterFile": "/data/chapters/mark-10.json"
+      },
+      "11": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/mark-11.json"
+      },
+      "12": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/mark-12.json"
+      },
+      "13": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/mark-13.json"
+      },
+      "14": {
+        "verseCount": 72,
+        "chapterFile": "/data/chapters/mark-14.json"
+      },
+      "15": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/mark-15.json"
+      },
+      "16": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/mark-16.json"
+      }
+    }
+  },
+  "Luke": {
+    "hi": "लूका",
+    "chapters": {
+      "1": {
+        "verseCount": 80,
+        "chapterFile": "/data/chapters/luke-1.json"
+      },
+      "2": {
+        "verseCount": 52,
+        "chapterFile": "/data/chapters/luke-2.json"
+      },
+      "3": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/luke-3.json"
+      },
+      "4": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/luke-4.json"
+      },
+      "5": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/luke-5.json"
+      },
+      "6": {
+        "verseCount": 49,
+        "chapterFile": "/data/chapters/luke-6.json"
+      },
+      "7": {
+        "verseCount": 50,
+        "chapterFile": "/data/chapters/luke-7.json"
+      },
+      "8": {
+        "verseCount": 56,
+        "chapterFile": "/data/chapters/luke-8.json"
+      },
+      "9": {
+        "verseCount": 62,
+        "chapterFile": "/data/chapters/luke-9.json"
+      },
+      "10": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/luke-10.json"
+      },
+      "11": {
+        "verseCount": 54,
+        "chapterFile": "/data/chapters/luke-11.json"
+      },
+      "12": {
+        "verseCount": 59,
+        "chapterFile": "/data/chapters/luke-12.json"
+      },
+      "13": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/luke-13.json"
+      },
+      "14": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/luke-14.json"
+      },
+      "15": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/luke-15.json"
+      },
+      "16": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/luke-16.json"
+      },
+      "17": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/luke-17.json"
+      },
+      "18": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/luke-18.json"
+      },
+      "19": {
+        "verseCount": 48,
+        "chapterFile": "/data/chapters/luke-19.json"
+      },
+      "20": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/luke-20.json"
+      },
+      "21": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/luke-21.json"
+      },
+      "22": {
+        "verseCount": 71,
+        "chapterFile": "/data/chapters/luke-22.json"
+      },
+      "23": {
+        "verseCount": 56,
+        "chapterFile": "/data/chapters/luke-23.json"
+      },
+      "24": {
+        "verseCount": 53,
+        "chapterFile": "/data/chapters/luke-24.json"
+      }
+    }
+  },
+  "John": {
+    "hi": "यूहन्ना",
+    "chapters": {
+      "1": {
+        "verseCount": 51,
+        "chapterFile": "/data/chapters/john-1.json"
+      },
+      "2": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/john-2.json"
+      },
+      "3": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/john-3.json"
+      },
+      "4": {
+        "verseCount": 54,
+        "chapterFile": "/data/chapters/john-4.json"
+      },
+      "5": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/john-5.json"
+      },
+      "6": {
+        "verseCount": 71,
+        "chapterFile": "/data/chapters/john-6.json"
+      },
+      "7": {
+        "verseCount": 53,
+        "chapterFile": "/data/chapters/john-7.json"
+      },
+      "8": {
+        "verseCount": 59,
+        "chapterFile": "/data/chapters/john-8.json"
+      },
+      "9": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/john-9.json"
+      },
+      "10": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/john-10.json"
+      },
+      "11": {
+        "verseCount": 57,
+        "chapterFile": "/data/chapters/john-11.json"
+      },
+      "12": {
+        "verseCount": 50,
+        "chapterFile": "/data/chapters/john-12.json"
+      },
+      "13": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/john-13.json"
+      },
+      "14": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/john-14.json"
+      },
+      "15": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/john-15.json"
+      },
+      "16": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/john-16.json"
+      },
+      "17": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/john-17.json"
+      },
+      "18": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/john-18.json"
+      },
+      "19": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/john-19.json"
+      },
+      "20": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/john-20.json"
+      },
+      "21": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/john-21.json"
+      }
+    }
+  },
+  "Acts": {
+    "hi": "प्रेरितों के काम",
+    "chapters": {
+      "1": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/acts-1.json"
+      },
+      "2": {
+        "verseCount": 47,
+        "chapterFile": "/data/chapters/acts-2.json"
+      },
+      "3": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/acts-3.json"
+      },
+      "4": {
+        "verseCount": 37,
+        "chapterFile": "/data/chapters/acts-4.json"
+      },
+      "5": {
+        "verseCount": 42,
+        "chapterFile": "/data/chapters/acts-5.json"
+      },
+      "6": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/acts-6.json"
+      },
+      "7": {
+        "verseCount": 60,
+        "chapterFile": "/data/chapters/acts-7.json"
+      },
+      "8": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/acts-8.json"
+      },
+      "9": {
+        "verseCount": 43,
+        "chapterFile": "/data/chapters/acts-9.json"
+      },
+      "10": {
+        "verseCount": 48,
+        "chapterFile": "/data/chapters/acts-10.json"
+      },
+      "11": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/acts-11.json"
+      },
+      "12": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/acts-12.json"
+      },
+      "13": {
+        "verseCount": 52,
+        "chapterFile": "/data/chapters/acts-13.json"
+      },
+      "14": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/acts-14.json"
+      },
+      "15": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/acts-15.json"
+      },
+      "16": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/acts-16.json"
+      },
+      "17": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/acts-17.json"
+      },
+      "18": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/acts-18.json"
+      },
+      "19": {
+        "verseCount": 41,
+        "chapterFile": "/data/chapters/acts-19.json"
+      },
+      "20": {
+        "verseCount": 38,
+        "chapterFile": "/data/chapters/acts-20.json"
+      },
+      "21": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/acts-21.json"
+      },
+      "22": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/acts-22.json"
+      },
+      "23": {
+        "verseCount": 35,
+        "chapterFile": "/data/chapters/acts-23.json"
+      },
+      "24": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/acts-24.json"
+      },
+      "25": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/acts-25.json"
+      },
+      "26": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/acts-26.json"
+      },
+      "27": {
+        "verseCount": 44,
+        "chapterFile": "/data/chapters/acts-27.json"
+      },
+      "28": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/acts-28.json"
+      }
+    }
+  },
+  "Romans": {
+    "hi": "रोमियों",
+    "chapters": {
+      "1": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/romans-1.json"
+      },
+      "2": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/romans-2.json"
+      },
+      "3": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/romans-3.json"
+      },
+      "4": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/romans-4.json"
+      },
+      "5": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/romans-5.json"
+      },
+      "6": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/romans-6.json"
+      },
+      "7": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/romans-7.json"
+      },
+      "8": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/romans-8.json"
+      },
+      "9": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/romans-9.json"
+      },
+      "10": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/romans-10.json"
+      },
+      "11": {
+        "verseCount": 36,
+        "chapterFile": "/data/chapters/romans-11.json"
+      },
+      "12": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/romans-12.json"
+      },
+      "13": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/romans-13.json"
+      },
+      "14": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/romans-14.json"
+      },
+      "15": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/romans-15.json"
+      },
+      "16": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/romans-16.json"
+      }
+    }
+  },
+  "1 Corinthians": {
+    "hi": "1 कुरिन्थियों",
+    "chapters": {
+      "1": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/1 corinthians-1.json"
+      },
+      "2": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/1 corinthians-2.json"
+      },
+      "3": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/1 corinthians-3.json"
+      },
+      "4": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 corinthians-4.json"
+      },
+      "5": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/1 corinthians-5.json"
+      },
+      "6": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/1 corinthians-6.json"
+      },
+      "7": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/1 corinthians-7.json"
+      },
+      "8": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/1 corinthians-8.json"
+      },
+      "9": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/1 corinthians-9.json"
+      },
+      "10": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/1 corinthians-10.json"
+      },
+      "11": {
+        "verseCount": 34,
+        "chapterFile": "/data/chapters/1 corinthians-11.json"
+      },
+      "12": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/1 corinthians-12.json"
+      },
+      "13": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/1 corinthians-13.json"
+      },
+      "14": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/1 corinthians-14.json"
+      },
+      "15": {
+        "verseCount": 58,
+        "chapterFile": "/data/chapters/1 corinthians-15.json"
+      },
+      "16": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/1 corinthians-16.json"
+      }
+    }
+  },
+  "2 Corinthians": {
+    "hi": "2 कुरिन्थियों",
+    "chapters": {
+      "1": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/2 corinthians-1.json"
+      },
+      "2": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/2 corinthians-2.json"
+      },
+      "3": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 corinthians-3.json"
+      },
+      "4": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 corinthians-4.json"
+      },
+      "5": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 corinthians-5.json"
+      },
+      "6": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 corinthians-6.json"
+      },
+      "7": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/2 corinthians-7.json"
+      },
+      "8": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/2 corinthians-8.json"
+      },
+      "9": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/2 corinthians-9.json"
+      },
+      "10": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 corinthians-10.json"
+      },
+      "11": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/2 corinthians-11.json"
+      },
+      "12": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 corinthians-12.json"
+      },
+      "13": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/2 corinthians-13.json"
+      }
+    }
+  },
+  "Galatians": {
+    "hi": "गलातियों",
+    "chapters": {
+      "1": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/galatians-1.json"
+      },
+      "2": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/galatians-2.json"
+      },
+      "3": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/galatians-3.json"
+      },
+      "4": {
+        "verseCount": 31,
+        "chapterFile": "/data/chapters/galatians-4.json"
+      },
+      "5": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/galatians-5.json"
+      },
+      "6": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/galatians-6.json"
+      }
+    }
+  },
+  "Ephesians": {
+    "hi": "इफिसियों",
+    "chapters": {
+      "1": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/ephesians-1.json"
+      },
+      "2": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/ephesians-2.json"
+      },
+      "3": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/ephesians-3.json"
+      },
+      "4": {
+        "verseCount": 32,
+        "chapterFile": "/data/chapters/ephesians-4.json"
+      },
+      "5": {
+        "verseCount": 33,
+        "chapterFile": "/data/chapters/ephesians-5.json"
+      },
+      "6": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/ephesians-6.json"
+      }
+    }
+  },
+  "Philippians": {
+    "hi": "फिलिप्पियों",
+    "chapters": {
+      "1": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/philippians-1.json"
+      },
+      "2": {
+        "verseCount": 30,
+        "chapterFile": "/data/chapters/philippians-2.json"
+      },
+      "3": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/philippians-3.json"
+      },
+      "4": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/philippians-4.json"
+      }
+    }
+  },
+  "Colossians": {
+    "hi": "कुलुस्सियों",
+    "chapters": {
+      "1": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/colossians-1.json"
+      },
+      "2": {
+        "verseCount": 23,
+        "chapterFile": "/data/chapters/colossians-2.json"
+      },
+      "3": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/colossians-3.json"
+      },
+      "4": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/colossians-4.json"
+      }
+    }
+  },
+  "1 Thessalonians": {
+    "hi": "1 थिस्सलुनीकियों",
+    "chapters": {
+      "1": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/1 thessalonians-1.json"
+      },
+      "2": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/1 thessalonians-2.json"
+      },
+      "3": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/1 thessalonians-3.json"
+      },
+      "4": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/1 thessalonians-4.json"
+      },
+      "5": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/1 thessalonians-5.json"
+      }
+    }
+  },
+  "2 Thessalonians": {
+    "hi": "2 थिस्सलुनीकियों",
+    "chapters": {
+      "1": {
+        "verseCount": 12,
+        "chapterFile": "/data/chapters/2 thessalonians-1.json"
+      },
+      "2": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/2 thessalonians-2.json"
+      },
+      "3": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 thessalonians-3.json"
+      }
+    }
+  },
+  "1 Timothy": {
+    "hi": "1 तीमुथियुस",
+    "chapters": {
+      "1": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/1 timothy-1.json"
+      },
+      "2": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/1 timothy-2.json"
+      },
+      "3": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/1 timothy-3.json"
+      },
+      "4": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/1 timothy-4.json"
+      },
+      "5": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/1 timothy-5.json"
+      },
+      "6": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 timothy-6.json"
+      }
+    }
+  },
+  "2 Timothy": {
+    "hi": "2 तीमुथियुस",
+    "chapters": {
+      "1": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 timothy-1.json"
+      },
+      "2": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/2 timothy-2.json"
+      },
+      "3": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/2 timothy-3.json"
+      },
+      "4": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/2 timothy-4.json"
+      }
+    }
+  },
+  "Titus": {
+    "hi": "तीतुस",
+    "chapters": {
+      "1": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/titus-1.json"
+      },
+      "2": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/titus-2.json"
+      },
+      "3": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/titus-3.json"
+      }
+    }
+  },
+  "Philemon": {
+    "hi": "फिलेमोन",
+    "chapters": {
+      "1": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/philemon-1.json"
+      }
+    }
+  },
+  "Hebrews": {
+    "hi": "इब्रानियों",
+    "chapters": {
+      "1": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/hebrews-1.json"
+      },
+      "2": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/hebrews-2.json"
+      },
+      "3": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/hebrews-3.json"
+      },
+      "4": {
+        "verseCount": 16,
+        "chapterFile": "/data/chapters/hebrews-4.json"
+      },
+      "5": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/hebrews-5.json"
+      },
+      "6": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/hebrews-6.json"
+      },
+      "7": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/hebrews-7.json"
+      },
+      "8": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/hebrews-8.json"
+      },
+      "9": {
+        "verseCount": 28,
+        "chapterFile": "/data/chapters/hebrews-9.json"
+      },
+      "10": {
+        "verseCount": 39,
+        "chapterFile": "/data/chapters/hebrews-10.json"
+      },
+      "11": {
+        "verseCount": 40,
+        "chapterFile": "/data/chapters/hebrews-11.json"
+      },
+      "12": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/hebrews-12.json"
+      },
+      "13": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/hebrews-13.json"
+      }
+    }
+  },
+  "James": {
+    "hi": "याकूब",
+    "chapters": {
+      "1": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/james-1.json"
+      },
+      "2": {
+        "verseCount": 26,
+        "chapterFile": "/data/chapters/james-2.json"
+      },
+      "3": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/james-3.json"
+      },
+      "4": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/james-4.json"
+      },
+      "5": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/james-5.json"
+      }
+    }
+  },
+  "1 Peter": {
+    "hi": "1 पतरस",
+    "chapters": {
+      "1": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/1 peter-1.json"
+      },
+      "2": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/1 peter-2.json"
+      },
+      "3": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/1 peter-3.json"
+      },
+      "4": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/1 peter-4.json"
+      },
+      "5": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/1 peter-5.json"
+      }
+    }
+  },
+  "2 Peter": {
+    "hi": "2 पतरस",
+    "chapters": {
+      "1": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/2 peter-1.json"
+      },
+      "2": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/2 peter-2.json"
+      },
+      "3": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/2 peter-3.json"
+      }
+    }
+  },
+  "1 John": {
+    "hi": "1 यूहन्ना",
+    "chapters": {
+      "1": {
+        "verseCount": 10,
+        "chapterFile": "/data/chapters/1 john-1.json"
+      },
+      "2": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/1 john-2.json"
+      },
+      "3": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/1 john-3.json"
+      },
+      "4": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 john-4.json"
+      },
+      "5": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/1 john-5.json"
+      }
+    }
+  },
+  "2 John": {
+    "hi": "2 यूहन्ना",
+    "chapters": {
+      "1": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/2 john-1.json"
+      }
+    }
+  },
+  "3 John": {
+    "hi": "3 यूहन्ना",
+    "chapters": {
+      "1": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/3 john-1.json"
+      }
+    }
+  },
+  "Jude": {
+    "hi": "यहूदा",
+    "chapters": {
+      "1": {
+        "verseCount": 25,
+        "chapterFile": "/data/chapters/jude-1.json"
+      }
+    }
+  },
+  "Revelation": {
+    "hi": "प्रकाशित वाक्य",
+    "chapters": {
+      "1": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/revelation-1.json"
+      },
+      "2": {
+        "verseCount": 29,
+        "chapterFile": "/data/chapters/revelation-2.json"
+      },
+      "3": {
+        "verseCount": 22,
+        "chapterFile": "/data/chapters/revelation-3.json"
+      },
+      "4": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/revelation-4.json"
+      },
+      "5": {
+        "verseCount": 14,
+        "chapterFile": "/data/chapters/revelation-5.json"
+      },
+      "6": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/revelation-6.json"
+      },
+      "7": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/revelation-7.json"
+      },
+      "8": {
+        "verseCount": 13,
+        "chapterFile": "/data/chapters/revelation-8.json"
+      },
+      "9": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/revelation-9.json"
+      },
+      "10": {
+        "verseCount": 11,
+        "chapterFile": "/data/chapters/revelation-10.json"
+      },
+      "11": {
+        "verseCount": 19,
+        "chapterFile": "/data/chapters/revelation-11.json"
+      },
+      "12": {
+        "verseCount": 17,
+        "chapterFile": "/data/chapters/revelation-12.json"
+      },
+      "13": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/revelation-13.json"
+      },
+      "14": {
+        "verseCount": 20,
+        "chapterFile": "/data/chapters/revelation-14.json"
+      },
+      "15": {
+        "verseCount": 8,
+        "chapterFile": "/data/chapters/revelation-15.json"
+      },
+      "16": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/revelation-16.json"
+      },
+      "17": {
+        "verseCount": 18,
+        "chapterFile": "/data/chapters/revelation-17.json"
+      },
+      "18": {
+        "verseCount": 24,
+        "chapterFile": "/data/chapters/revelation-18.json"
+      },
+      "19": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/revelation-19.json"
+      },
+      "20": {
+        "verseCount": 15,
+        "chapterFile": "/data/chapters/revelation-20.json"
+      },
+      "21": {
+        "verseCount": 27,
+        "chapterFile": "/data/chapters/revelation-21.json"
+      },
+      "22": {
+        "verseCount": 21,
+        "chapterFile": "/data/chapters/revelation-22.json"
+      }
+    }
+  }
+}

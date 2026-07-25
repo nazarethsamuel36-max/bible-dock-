@@ -1,65 +1,401 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+export default function LandingPage() {
+  const [origin, setOrigin] = useState<string>('http://localhost:3000');
+  const [copiedDock, setCopiedDock] = useState<boolean>(false);
+  const [copiedOverlay, setCopiedOverlay] = useState<boolean>(false);
+  const [copiedOverlayPreview, setCopiedOverlayPreview] = useState<boolean>(false);
+  const [copiedOverlayBanner, setCopiedOverlayBanner] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setOrigin(window.location.origin);
+    }
+  }, []);
+
+  const copyToClipboard = (text: string, setCopiedState: (v: boolean) => void) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedState(true);
+      setTimeout(() => setCopiedState(false), 2000);
+    });
+  };
+
+  const dockUrl = `${origin}/dock`;
+  const overlayUrl = `${origin}/presentation`;
+  const overlayPreviewUrl = `${origin}/presentation?preview=true`;
+  const overlayBannerUrl = `${origin}/presentation?banner=true`;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
+      padding: '20px',
+      fontFamily: 'Inter, system-ui, sans-serif'
+    }}>
+      <div style={{
+        maxWidth: '900px',
+        width: '100%',
+        textAlign: 'center'
+      }}>
+        <h1 style={{
+          fontSize: '48px',
+          fontWeight: 800,
+          color: '#fff',
+          marginBottom: '12px',
+          letterSpacing: '-0.02em'
+        }}>
+          Bible Dock
+        </h1>
+        <p style={{
+          fontSize: '18px',
+          color: '#a0aec0',
+          marginBottom: '48px',
+          fontWeight: 400
+        }}>
+          Bible Presentation & Controller Hub
+        </p>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '24px',
+          marginBottom: '48px'
+        }}>
+          {/* Dock Card */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '16px',
+            padding: '32px',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🎛️</div>
+            <h2 style={{
+              fontSize: '24px',
+              fontWeight: 700,
+              color: '#fff',
+              marginBottom: '12px'
+            }}>
+              Dock Controller
+            </h2>
+            <p style={{
+              fontSize: '14px',
+              color: '#a0aec0',
+              lineHeight: 1.6,
+              marginBottom: '24px'
+            }}>
+              Open the presentation workspace to find verses, read scripture, and control overlays in real time.
+            </p>
+            <div style={{
+              background: 'rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              padding: '12px',
+              marginBottom: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px'
+            }}>
+              <span style={{
+                fontSize: '13px',
+                color: '#e2e8f0',
+                fontFamily: 'monospace',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap'
+              }}>
+                {dockUrl}
+              </span>
+              <button
+                onClick={() => copyToClipboard(dockUrl, setCopiedDock)}
+                style={{
+                  padding: '6px 12px',
+                  background: copiedDock ? '#48bb78' : 'rgba(255, 255, 255, 0.1)',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {copiedDock ? 'Copied!' : 'Copy'}
+              </button>
+            </div>
+            <Link
+              href="/dock"
+              style={{
+                display: 'block',
+                padding: '12px 24px',
+                background: '#48bb78',
+                color: '#fff',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: 600,
+                fontSize: '14px',
+                transition: 'background 0.2s'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = '#38a169'}
+              onMouseLeave={(e) => e.currentTarget.style.background = '#48bb78'}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Open Dock
+            </Link>
+          </div>
+
+          {/* Presentation Card */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '16px',
+            padding: '32px',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📺</div>
+            <h2 style={{
+              fontSize: '24px',
+              fontWeight: 700,
+              color: '#fff',
+              marginBottom: '12px'
+            }}>
+              OBS Overlay Display
+            </h2>
+            <p style={{
+              fontSize: '14px',
+              color: '#a0aec0',
+              lineHeight: 1.6,
+              marginBottom: '24px'
+            }}>
+              Open this display window on your presentation output monitor or load it directly as a transparent browser source in OBS.
+            </p>
+            <div style={{
+              background: 'rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              padding: '12px',
+              marginBottom: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px'
+            }}>
+              <span style={{
+                fontSize: '13px',
+                color: '#e2e8f0',
+                fontFamily: 'monospace',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap'
+              }}>
+                {overlayUrl}
+              </span>
+              <button
+                onClick={() => copyToClipboard(overlayUrl, setCopiedOverlay)}
+                style={{
+                  padding: '6px 12px',
+                  background: copiedOverlay ? '#48bb78' : 'rgba(255, 255, 255, 0.1)',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {copiedOverlay ? 'Copied!' : 'Copy'}
+              </button>
+            </div>
+            <div style={{
+              background: 'rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              padding: '12px',
+              marginBottom: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px'
+            }}>
+              <span style={{
+                fontSize: '13px',
+                color: '#e2e8f0',
+                fontFamily: 'monospace',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap'
+              }}>
+                {overlayPreviewUrl}
+              </span>
+              <button
+                onClick={() => copyToClipboard(overlayPreviewUrl, setCopiedOverlayPreview)}
+                style={{
+                  padding: '6px 12px',
+                  background: copiedOverlayPreview ? '#48bb78' : 'rgba(255, 255, 255, 0.1)',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {copiedOverlayPreview ? 'Copied!' : 'Copy'}
+              </button>
+            </div>
+            <div style={{
+              background: 'rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              padding: '12px',
+              marginBottom: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px'
+            }}>
+              <span style={{
+                fontSize: '13px',
+                color: '#e2e8f0',
+                fontFamily: 'monospace',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap'
+              }}>
+                {overlayBannerUrl}
+              </span>
+              <button
+                onClick={() => copyToClipboard(overlayBannerUrl, setCopiedOverlayBanner)}
+                style={{
+                  padding: '6px 12px',
+                  background: copiedOverlayBanner ? '#48bb78' : 'rgba(255, 255, 255, 0.1)',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {copiedOverlayBanner ? 'Copied!' : 'Copy'}
+              </button>
+            </div>
+            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link
+                href="/presentation"
+                style={{
+                  padding: '12px 20px',
+                  background: '#48bb78',
+                  color: '#fff',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                  fontSize: '13px',
+                  transition: 'background 0.2s'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = '#38a169'}
+                onMouseLeave={(e) => e.currentTarget.style.background = '#48bb78'}
+              >
+                Live (Transparent)
+              </Link>
+              <Link
+                href="/presentation?preview=true"
+                style={{
+                  padding: '12px 20px',
+                  background: '#4a5568',
+                  color: '#fff',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                  fontSize: '13px',
+                  transition: 'background 0.2s'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = '#2d3748'}
+                onMouseLeave={(e) => e.currentTarget.style.background = '#4a5568'}
+              >
+                Preview Mode
+              </Link>
+              <Link
+                href="/presentation?banner=true"
+                style={{
+                  padding: '12px 20px',
+                  background: '#2d3748',
+                  color: '#fff',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                  fontSize: '13px',
+                  transition: 'background 0.2s'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = '#1a202c'}
+                onMouseLeave={(e) => e.currentTarget.style.background = '#2d3748'}
+              >
+                Banner Mode
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        {/* GitHub Links */}
+        <div style={{
+          display: 'flex',
+          gap: '16px',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexWrap: 'wrap'
+        }}>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/nazarethsamuel36-max/bible-dock"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '12px 24px',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              color: '#fff',
+              textDecoration: 'none',
+              fontSize: '14px',
+              fontWeight: 600',
+              transition: 'all 0.2s'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub Repository
           </a>
         </div>
-      </main>
+
+        <div style={{
+          marginTop: '48px',
+          fontSize: '13px',
+          color: '#718096'
+        }}>
+          Powered by Next.js + React. English & Hindi Bible support with KJV text.
+        </div>
+      </div>
     </div>
   );
 }
+
