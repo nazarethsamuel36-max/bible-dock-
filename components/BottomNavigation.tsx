@@ -4,16 +4,14 @@ import React from 'react';
 import { useBible } from '../context/BibleContext';
 
 interface Tab {
-  id: 'search' | 'reader' | 'list' | 'settings';
-  icon: string;
+  id: 'search' | 'reader' | 'list';
   label: string;
 }
 
 const TABS: Tab[] = [
-  { id: 'search',   icon: '⌕',  label: 'Search'   },
-  { id: 'reader',   icon: '📖', label: 'Reader'   },
-  { id: 'list',     icon: '📋', label: 'List'     },
-  { id: 'settings', icon: '⚙',  label: 'Settings' },
+  { id: 'search', label: 'Search' },
+  { id: 'reader', label: 'Reader' },
+  { id: 'list',   label: 'List'   },
 ];
 
 export const BottomNavigation: React.FC = () => {
@@ -36,10 +34,8 @@ export const BottomNavigation: React.FC = () => {
           style={{
             flex: 1,
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '3px',
             border: 'none',
             background: state.activeWorkspace === tab.id ? 'var(--bg-active)' : 'transparent',
             cursor: 'pointer',
@@ -68,11 +64,10 @@ export const BottomNavigation: React.FC = () => {
               borderRadius: '0 0 2px 2px',
             }} />
           )}
-          <span style={{ fontSize: '18px', lineHeight: 1 }}>{tab.icon}</span>
           <span style={{
-            fontSize: '9px',
-            fontWeight: 500,
-            letterSpacing: '0.04em',
+            fontSize: '11px',
+            fontWeight: 600,
+            letterSpacing: '0.08em',
             textTransform: 'uppercase',
             color: state.activeWorkspace === tab.id ? 'var(--text-primary)' : 'var(--text-muted)',
           }}>{tab.label}</span>

@@ -45,7 +45,7 @@ interface BibleFull {
   };
 }
 
-type Workspace = 'search' | 'reader' | 'list' | 'settings';
+type Workspace = 'search' | 'reader' | 'list';
 
 interface BibleState {
   activeWorkspace: Workspace;

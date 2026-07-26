@@ -108,6 +108,28 @@ export const BibleSearch: React.FC = () => {
     return results;
   }, [bibleIndex, inputValue]);
 
+  const handleSelectResult = useCallback((result: SearchResult) => {
+    const isBook = result.type === 'book';
+    const isCurrentInputMatching = inputValue.trim().toLowerCase() === result.display.trim().toLowerCase();
+
+    if (isBook && !isCurrentInputMatching) {
+      // First time selecting a book: just fill the search bar with book name + space
+      const newQuery = `${result.display} `;
+      setInputValue(newQuery);
+      setSearchQuery(newQuery);
+      setSelectedIndex(-1);
+      inputRef.current?.focus();
+    } else {
+      // Second time selecting (or it's a chapter/verse): navigate
+      setInputValue(result.display);
+      setSearchQuery(result.display);
+      setSelectedIndex(-1);
+      if (result.book) {
+        goToReference(result.book, result.chapter, result.verse);
+      }
+    }
+  }, [inputValue, setSearchQuery, goToReference]);
+
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
@@ -127,46 +149,26 @@ export const BibleSearch: React.FC = () => {
     } else if (e.key === 'Enter') {
       e.preventDefault();
       if (selectedIndex >= 0 && results[selectedIndex]) {
-        const result = results[selectedIndex];
-        setInputValue(result.display);
-        setSearchQuery(result.display);
-        setSelectedIndex(-1);
-        // Navigate to reading mode (white) on Enter
-        if (result.book) {
-          goToReference(result.book, result.chapter, result.verse);
-        }
-      } else if (results.length === 1) {
-        // Single result, navigate to reading mode (white)
-        const result = results[0];
-        setInputValue(result.display);
-        setSearchQuery(result.display);
-        if (result.book) {
-          goToReference(result.book, result.chapter, result.verse);
-        }
+        handleSelectResult(results[selectedIndex]);
+      } else if (results.length > 0) {
+        handleSelectResult(results[0]);
       }
     } else if (e.key === 'Escape') {
       setInputValue('');
       setSearchQuery('');
       setSelectedIndex(-1);
     }
-  }, [results, selectedIndex, setSearchQuery, goToReference]);
+  }, [results, selectedIndex, handleSelectResult, setSearchQuery]);
 
   const handleResultClick = useCallback((result: SearchResult) => {
-    setInputValue(result.display);
-    setSearchQuery(result.display);
-    setSelectedIndex(-1);
-    // Navigate immediately on click
-    if (result.book) {
-      goToReference(result.book, result.chapter, result.verse);
-    }
-  }, [setSearchQuery, goToReference]);
+    handleSelectResult(result);
+  }, [handleSelectResult]);
 
   const handleNavigate = useCallback(() => {
-    if (results.length === 1) {
-      const result = results[0];
-      goToReference(result.book, result.chapter, result.verse);
+    if (results.length > 0) {
+      handleSelectResult(results[0]);
     }
-  }, [results, goToReference]);
+  }, [results, handleSelectResult]);
 
   return (
     <div className="bible-search-workspace" style={{
@@ -178,36 +180,66 @@ export const BibleSearch: React.FC = () => {
     }}>
       {/* Search Input */}
       <div style={{ marginBottom: '12px' }}>
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-          <span style={{
-            position: 'absolute',
-            left: '10px',
-            color: 'var(--text-muted)',
-            fontSize: '14px',
-            pointerEvents: 'none',
-            lineHeight: 1
-          }}>⌕</span>
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Search Bible..."
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center' }}>
+            <span style={{
+              position: 'absolute',
+              left: '10px',
+              color: 'var(--text-muted)',
+              fontSize: '14px',
+              pointerEvents: 'none',
+              lineHeight: 1
+            }}>⌕</span>
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Search Bible..."
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              style={{
+                width: '100%',
+                height: '36px',
+                padding: '0 12px 0 34px',
+                fontSize: '13px',
+                fontFamily: 'Inter, sans-serif',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-sm)',
+                color: 'var(--text-primary)',
+                outline: 'none',
+                transition: 'border-color 0.15s'
+              }}
+            />
+          </div>
+          <button
+            onClick={handleNavigate}
             style={{
-              width: '100%',
               height: '36px',
-              padding: '0 12px 0 34px',
-              fontSize: '13px',
-              fontFamily: 'Inter, sans-serif',
+              padding: '0 12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
               borderRadius: 'var(--radius-sm)',
               color: 'var(--text-primary)',
-              outline: 'none',
-              transition: 'border-color 0.15s'
+              cursor: 'pointer',
+              fontSize: '14px',
+              transition: 'background 0.1s, border-color 0.1s'
             }}
-          />
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'var(--bg-hover)';
+              e.currentTarget.style.borderColor = 'var(--border-mid)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'var(--bg-card)';
+              e.currentTarget.style.borderColor = 'var(--border)';
+            }}
+            title="Search / Go"
+          >
+            🔍
+          </button>
         </div>
       </div>
 

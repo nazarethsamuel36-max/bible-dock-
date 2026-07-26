@@ -3,7 +3,6 @@
 import { BibleContextProvider, useBible } from '../../context/BibleContext';
 import { BibleSearch } from '../../components/BibleSearch';
 import { BibleReader } from '../../components/BibleReader';
-import { BibleSettings } from '../../components/BibleSettings';
 import { BibleSetlist } from '../../components/BibleSetlist';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
@@ -37,10 +36,9 @@ function BibleAppContent() {
         display: 'flex',
         flexDirection: 'column',
       }}>
-        {activeWorkspace === 'search'   && <BibleSearch />}
-        {activeWorkspace === 'reader'   && <BibleReader />}
-        {activeWorkspace === 'list'     && <BibleSetlist />}
-        {activeWorkspace === 'settings' && <BibleSettings />}
+        {activeWorkspace === 'search' && <BibleSearch />}
+        {activeWorkspace === 'reader' && <BibleReader />}
+        {activeWorkspace === 'list'   && <BibleSetlist />}
       </div>
 
       {/* Language Toggle — full-width bar, right above bottom nav for fast access */}
