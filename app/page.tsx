@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function LandingPage() {
@@ -16,6 +16,18 @@ export default function LandingPage() {
     });
   };
 
+  // Allow body to scroll on landing page (overrides the app-wide overflow:hidden)
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
+    const prevHeight   = document.body.style.height;
+    document.body.style.overflow = 'auto';
+    document.body.style.height   = 'auto';
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.body.style.height   = prevHeight;
+    };
+  }, []);
+
   const domain = 'https://hindienglishbible-dock.vercel.app';
   const dockUrl = `${domain}/dock`;
   const overlayUrl = `${domain}/presentation`;
@@ -25,17 +37,15 @@ export default function LandingPage() {
   return (
     <div style={{
       minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
-      padding: '20px',
-      fontFamily: 'Inter, system-ui, sans-serif'
+      background: '#111113',
+      padding: '40px 20px 60px',
+      fontFamily: 'Inter, system-ui, sans-serif',
     }}>
       <div style={{
         maxWidth: '900px',
         width: '100%',
-        textAlign: 'center'
+        margin: '0 auto',
+        textAlign: 'center',
       }}>
         <h1 style={{
           fontSize: '48px',

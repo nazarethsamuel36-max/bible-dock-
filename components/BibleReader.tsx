@@ -2,9 +2,10 @@
 
 import React, { useCallback, useMemo, useEffect, useRef } from 'react';
 import { useBible } from '../context/BibleContext';
+import { addToBibleSetlist } from './BibleSetlist';
 
 export const BibleReader: React.FC = () => {
-  const { state, setLanguage, setLocation, setReadingVerse, setReadingSlide, toggleLiveVerse, setPresentationSlide } = useBible();
+  const { state, setLocation, setReadingVerse, setReadingSlide, toggleLiveVerse, setPresentationSlide } = useBible();
   const { bibleFull, bibleIndex, language, currentBook, currentChapter, currentVerse, readingVerseIndex, readingSlideIndex, liveVerseIndex, presentationSlideIndex, presentationTotalSlides, justNavigatedFromSearch } = state;
   
   const contentRef = useRef<HTMLDivElement>(null);
@@ -316,46 +317,6 @@ export const BibleReader: React.FC = () => {
           >
             Next →
           </button>
-
-          {/* Language Toggle */}
-          <div style={{
-            display: 'flex',
-            background: 'var(--bg-card)',
-            borderRadius: 'var(--radius-sm)',
-            border: '1px solid var(--border)',
-            overflow: 'hidden'
-          }}>
-            <button
-              onClick={() => setLanguage('en')}
-              style={{
-                padding: '6px 12px',
-                border: 'none',
-                background: language === 'en' ? 'var(--bg-active)' : 'transparent',
-                color: language === 'en' ? 'var(--text-primary)' : 'var(--text-muted)',
-                fontSize: '11px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                letterSpacing: '0.04em'
-              }}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLanguage('hi')}
-              style={{
-                padding: '6px 12px',
-                border: 'none',
-                background: language === 'hi' ? 'var(--bg-active)' : 'transparent',
-                color: language === 'hi' ? 'var(--text-primary)' : 'var(--text-muted)',
-                fontSize: '11px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                letterSpacing: '0.04em'
-              }}
-            >
-              हिंदी
-            </button>
-          </div>
         </div>
       </div>
 
@@ -423,6 +384,46 @@ export const BibleReader: React.FC = () => {
                     {label}
                   </span>
                 </div>
+                {/* Save to List button */}
+                <button
+                  onClick={e => {
+                    e.stopPropagation();
+                    addToBibleSetlist({
+                      book: currentBook,
+                      chapter: currentChapter,
+                      verse: item.verseNum,
+                      text: item.text,
+                      reference: `${currentBook} ${currentChapter}:${item.verseNum}`,
+                    });
+                  }}
+                  style={{
+                    width: '22px',
+                    height: '22px',
+                    borderRadius: '50%',
+                    border: '1px solid var(--border-mid)',
+                    background: 'none',
+                    color: 'var(--text-muted)',
+                    fontSize: '14px',
+                    lineHeight: 1,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'all 0.12s',
+                    fontFamily: 'Inter, sans-serif',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = 'var(--text-primary)';
+                    e.currentTarget.style.color = 'var(--text-primary)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'var(--border-mid)';
+                    e.currentTarget.style.color = 'var(--text-muted)';
+                  }}
+                  title="Save to List"
+                >
+                  +
+                </button>
               </div>
               <div style={{
                 padding: '8px 12px 10px',
