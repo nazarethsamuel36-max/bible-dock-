@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useMemo, useEffect, useRef } from 'react';
-import { useBible } from '../context/BibleContext';
+import { useBible, splitVerseToSlides } from '../context/BibleContext';
 import { addToBibleSetlist } from './BibleSetlist';
 
 export const BibleReader: React.FC = () => {
@@ -35,42 +35,18 @@ export const BibleReader: React.FC = () => {
     }> = [];
 
     Object.entries(currentChapterData).forEach(([verseNum, text], verseIndex) => {
-      // Estimate if verse needs splitting (simple character count)
-      const charCount = text.length;
-      const estimatedLines = charCount / 71; // 71 chars per line at 42px
-      const maxLines = 4; // Max lines that fit
-      const needsSplitting = estimatedLines > maxLines;
+      const slides = splitVerseToSlides(text);
       
-      if (needsSplitting) {
-        // Split into multiple slides
-        const totalSlides = Math.ceil(estimatedLines / maxLines);
-        const charsPerSlide = Math.ceil(charCount / totalSlides);
-        
-        for (let slideIndex = 0; slideIndex < totalSlides; slideIndex++) {
-          const startChar = slideIndex * charsPerSlide;
-          const endChar = Math.min((slideIndex + 1) * charsPerSlide, charCount);
-          const slideText = text.slice(startChar, endChar).trim();
-          
-          items.push({
-            verseIndex,
-            slideIndex,
-            verseNum,
-            text: slideText,
-            slideNumber: slideIndex + 1,
-            totalSlides
-          });
-        }
-      } else {
-        // Single slide
+      slides.forEach((slideText, slideIndex) => {
         items.push({
           verseIndex,
-          slideIndex: 0,
+          slideIndex,
           verseNum,
-          text,
-          slideNumber: 1,
-          totalSlides: 1
+          text: slideText,
+          slideNumber: slideIndex + 1,
+          totalSlides: slides.length
         });
-      }
+      });
     });
 
     return items;

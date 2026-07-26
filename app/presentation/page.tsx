@@ -11,6 +11,7 @@ interface BibleVerseData {
   text: string;
   reference: string;
   slideIndex?: number;
+  totalSlides?: number;
 }
 
 function PresentationContent() {
@@ -216,13 +217,13 @@ function PresentationContent() {
         <div className="overlay-metadata-bar">
           <div className="overlay-year">{reference}</div>
           <div className="overlay-title"></div>
-          {renderedSlides.length > 1 && (
-            <div className="overlay-para">{currentSlideIndex + 1}/{renderedSlides.length}</div>
+          {activeVerse && activeVerse.totalSlides && activeVerse.totalSlides > 1 && (
+            <div className="overlay-para">{(activeVerse.slideIndex || 0) + 1}/{activeVerse.totalSlides}</div>
           )}
         </div>
         <div className="overlay-quote-container">
           <div className="overlay-quote-text">
-            {currentSlide?.text}
+            {activeVerse?.text}
           </div>
         </div>
       </div>

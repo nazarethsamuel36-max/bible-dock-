@@ -2,6 +2,27 @@
 
 import React, { createContext, useContext, useReducer, useCallback, useEffect, useRef } from 'react';
 
+export function splitVerseToSlides(text: string): string[] {
+  const charCount = text.length;
+  const estimatedLines = charCount / 71; // 71 chars per line at 42px
+  const maxLines = 4; // Max lines that fit
+  const needsSplitting = estimatedLines > maxLines;
+  
+  if (needsSplitting) {
+    const totalSlides = Math.ceil(estimatedLines / maxLines);
+    const charsPerSlide = Math.ceil(charCount / totalSlides);
+    const slides: string[] = [];
+    
+    for (let slideIndex = 0; slideIndex < totalSlides; slideIndex++) {
+      const startChar = slideIndex * charsPerSlide;
+      const endChar = Math.min((slideIndex + 1) * charsPerSlide, charCount);
+      slides.push(text.slice(startChar, endChar).trim());
+    }
+    return slides;
+  }
+  return [text];
+}
+
 interface BibleIndex {
   [bookName: string]: {
     hi: string;
@@ -240,11 +261,12 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   const toggleLiveVerse = useCallback((index: number, slideIndex: number = 0) => {
     const current = stateRef.current;
-    // Toggle: if already live, clear live, otherwise set live
-    // Also always update reading position
-    dispatch({ type: 'SET_READING_VERSE', payload: index });
     
-    if (current.liveVerseIndex === index) {
+    // Toggle: if already live on this exact slide, clear live, otherwise set live
+    dispatch({ type: 'SET_READING_VERSE', payload: index });
+    dispatch({ type: 'SET_READING_SLIDE', payload: slideIndex });
+    
+    if (current.liveVerseIndex === index && current.presentationSlideIndex === slideIndex) {
       dispatch({ type: 'CLEAR_LIVE_VERSE' });
       // Send clear command to presentation
       const channel = new BroadcastChannel('bible_presentation_channel');
@@ -253,20 +275,27 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
       channel.close();
     } else {
       dispatch({ type: 'SET_LIVE_VERSE', payload: index });
+      
       // Send verse to presentation with slide index
       if (current.bibleFull && current.currentBook && current.currentChapter) {
         const bookKey = current.language === 'en' ? current.currentBook : (current.bibleIndex?.[current.currentBook]?.hi || current.currentBook);
         const bookData = current.bibleFull[current.language]?.[bookKey];
         if (bookData && bookData.chapters[current.currentChapter]) {
           const verseNum = Object.keys(bookData.chapters[current.currentChapter])[index];
-          const verseText = bookData.chapters[current.currentChapter][verseNum];
+          const fullVerseText = bookData.chapters[current.currentChapter][verseNum];
+          const slides = splitVerseToSlides(fullVerseText);
+          const slideText = slides[slideIndex] || fullVerseText;
+          
+          dispatch({ type: 'SET_PRESENTATION_SLIDE', payload: { index: slideIndex, total: slides.length } });
+          
           const verseData = {
             book: current.currentBook,
             chapter: current.currentChapter,
             verse: verseNum,
-            text: verseText,
+            text: slideText,
             reference: `${current.currentBook} ${current.currentChapter}:${verseNum}`,
-            slideIndex: slideIndex
+            slideIndex: slideIndex,
+            totalSlides: slides.length
           };
           const channel = new BroadcastChannel('bible_presentation_channel');
           channel.postMessage({ action: 'showVerse', data: verseData });
