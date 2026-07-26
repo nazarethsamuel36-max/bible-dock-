@@ -206,7 +206,7 @@ function splitVerseIntoSlides(
 export function renderVerseForPresentation(
   text: string,
   verseNumber: string,
-  fontSize: number = 42,
+  fontSize: number = 69,
   lineHeight: number = 1.5,
   fontFamily: string = 'Crimson Text, serif'
 ): VerseRenderResult {
@@ -250,7 +250,7 @@ export function renderVerseForPresentation(
  */
 export function requiresVerseSplitting(
   text: string,
-  fontSize: number = 42,
+  fontSize: number = 69,
   lineHeight: number = 1.5,
   fontFamily: string = 'Crimson Text, serif'
 ): boolean {

@@ -173,7 +173,7 @@ html, body {
 }
 
 .overlay-quote-text {
-  font-size: var(--quote-font-size, 42px);
+  font-size: var(--quote-font-size, 69px);
   line-height: var(--quote-line-height, 1.5);
   color: #ffffff;
   font-family: var(--quote-font-family, 'Crimson Text', serif);

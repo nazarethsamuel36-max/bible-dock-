@@ -1,26 +1,11 @@
 'use client';
 
 import React, { createContext, useContext, useReducer, useCallback, useEffect, useRef } from 'react';
+import { renderVerseForPresentation } from '../lib/verseRenderer';
 
 export function splitVerseToSlides(text: string): string[] {
-  const charCount = text.length;
-  const estimatedLines = charCount / 71; // 71 chars per line at 42px
-  const maxLines = 4; // Max lines that fit
-  const needsSplitting = estimatedLines > maxLines;
-  
-  if (needsSplitting) {
-    const totalSlides = Math.ceil(estimatedLines / maxLines);
-    const charsPerSlide = Math.ceil(charCount / totalSlides);
-    const slides: string[] = [];
-    
-    for (let slideIndex = 0; slideIndex < totalSlides; slideIndex++) {
-      const startChar = slideIndex * charsPerSlide;
-      const endChar = Math.min((slideIndex + 1) * charsPerSlide, charCount);
-      slides.push(text.slice(startChar, endChar).trim());
-    }
-    return slides;
-  }
-  return [text];
+  const result = renderVerseForPresentation(text, '', 69);
+  return result.slides.map(slide => slide.text);
 }
 
 interface BibleIndex {
