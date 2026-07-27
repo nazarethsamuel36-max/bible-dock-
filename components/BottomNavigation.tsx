@@ -25,7 +25,7 @@ export const BottomNavigation: React.FC = () => {
       height: '52px',
       background: 'var(--bg-panel)',
       borderTop: '1px solid var(--border)',
-      zIndex: 20,
+      padding: '0',
     }}>
       {TABS.map(tab => (
         <button
@@ -65,7 +65,7 @@ export const BottomNavigation: React.FC = () => {
             }} />
           )}
           <span style={{
-            fontSize: '11px',
+            fontSize: '12px',
             fontWeight: 600,
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
