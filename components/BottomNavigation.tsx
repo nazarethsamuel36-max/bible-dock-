@@ -22,7 +22,7 @@ export const BottomNavigation: React.FC = () => {
       flexShrink: 0,
       display: 'flex',
       alignItems: 'stretch',
-      height: '52px',
+      height: '14px',
       background: 'var(--bg-panel)',
       borderTop: '1px solid var(--border)',
       padding: '0',
