@@ -45,7 +45,7 @@ function BibleAppContent() {
       <div style={{
         flexShrink: 0,
         display: 'flex',
-        height: '40px',
+        height: '20px',
         background: 'var(--bg-panel)',
         borderTop: '1px solid var(--border)',
       }}>
