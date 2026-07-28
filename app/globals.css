@@ -139,7 +139,7 @@ html, body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: var(--metadata-font-size, 24px);
+  font-size: calc(var(--metadata-font-size, 24px) * var(--viewport-scale, 1));
   font-family: var(--metadata-font-family, 'Inter', sans-serif);
   line-height: var(--metadata-line-height, 1.2);
 }
@@ -174,7 +174,7 @@ html, body {
 }
 
 .overlay-quote-text {
-  font-size: var(--quote-font-size, 42px);
+  font-size: calc(var(--quote-font-size, 42px) * var(--viewport-scale, 1));
   line-height: var(--quote-line-height, 1.2);
   color: #ffffff;
   font-family: var(--quote-font-family, 'Crimson Text, serif');
