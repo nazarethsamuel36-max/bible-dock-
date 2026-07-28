@@ -32,22 +32,32 @@ function PresentationContent() {
       const w = window.innerWidth;
       const h = window.innerHeight;
 
+      // Virtual design canvas dimensions
+      const designWidth = 1920;
+      const designHeight = 1080;
+      const designLowerThirdHeight = 324;
+
+      // Calculate scale factor based on viewport width
+      const scale = w / designWidth;
+
       if (isBanner) {
         // Banner mode: 30% height, full width, positioned at bottom
         canvasRef.current.style.transform = 'none';
         canvasRef.current.style.left = '0';
-        canvasRef.current.style.top = `${h * 0.7}px`; // 30% from top (70% down)
+        canvasRef.current.style.top = `${h * 0.7}px`;
         canvasRef.current.style.width = '100%';
         canvasRef.current.style.height = `${h * 0.3}px`;
       } else {
-        // 16:9 mode with proportional margins
-        const marginPercent = 0.05; // 5% margin on all sides
-        const availableW = w * (1 - marginPercent * 2);
-        const availableH = h * (1 - marginPercent * 2);
-        const scale = Math.min(availableW / 1920, availableH / 1080);
-        canvasRef.current.style.transform = `scale(${scale})`;
-        canvasRef.current.style.left = `${(w - 1920 * scale) / 2}px`;
-        canvasRef.current.style.top = `${(h - 1080 * scale) / 2}px`;
+        // Responsive lower third: full width, scaled height
+        const scaledHeight = designLowerThirdHeight * scale;
+        canvasRef.current.style.transform = 'none';
+        canvasRef.current.style.left = '0';
+        canvasRef.current.style.top = `${h - scaledHeight}px`;
+        canvasRef.current.style.width = '100%';
+        canvasRef.current.style.height = `${scaledHeight}px`;
+
+        // Apply scale to internal elements via CSS variable
+        document.documentElement.style.setProperty('--viewport-scale', scale.toString());
       }
     };
 
@@ -59,28 +69,54 @@ function PresentationContent() {
   // Render verse when it changes
   useEffect(() => {
     if (activeVerse) {
-      const result = renderVerseForPresentation(activeVerse.text, activeVerse.verse);
+      const scale = window.innerWidth / 1920;
+      // Read font size from CSS variable
+      const computedStyle = getComputedStyle(document.documentElement);
+      const fontSizeStr = computedStyle.getPropertyValue('--quote-font-size').trim();
+      const fontSize = fontSizeStr ? parseInt(fontSizeStr, 10) : 46;
+      const lineHeightStr = computedStyle.getPropertyValue('--quote-line-height').trim();
+      const lineHeight = lineHeightStr ? parseFloat(lineHeightStr) : 1;
+
+      const result = renderVerseForPresentation(activeVerse.text, activeVerse.verse, fontSize, lineHeight, 'Crimson Text, serif', 1);
       setRenderedSlides(result.slides);
       // Use slideIndex if provided, otherwise default to 0
       setCurrentSlideIndex(activeVerse.slideIndex || 0);
       setIsActive(true);
+
+      // Apply dynamic padding and scaled font size via CSS variables
+      console.log('[Presentation] Applying dynamic values:', {
+        dynamicPaddingTop: result.dynamicPaddingTop,
+        dynamicPaddingBottom: result.dynamicPaddingBottom,
+        scaledFontSize: result.scaledFontSize
+      });
+      document.documentElement.style.setProperty('--dynamic-padding-top', `${result.dynamicPaddingTop}px`);
+      document.documentElement.style.setProperty('--dynamic-padding-bottom', `${result.dynamicPaddingBottom}px`);
+      document.documentElement.style.setProperty('--quote-font-size', `${result.scaledFontSize}px`);
+
+      // Verify the values were set
+      console.log('[Presentation] CSS variables after setting:', {
+        paddingTop: getComputedStyle(document.documentElement).getPropertyValue('--dynamic-padding-top'),
+        paddingBottom: getComputedStyle(document.documentElement).getPropertyValue('--dynamic-padding-bottom'),
+        fontSize: getComputedStyle(document.documentElement).getPropertyValue('--quote-font-size')
+      });
+
       // Send slide info to control dock
       const channel = new BroadcastChannel('bible_presentation_channel');
-      channel.postMessage({ 
-        action: 'slideInfo', 
-        data: { 
+      channel.postMessage({
+        action: 'slideInfo',
+        data: {
           totalSlides: result.slides.length,
           requiresSplitting: result.requiresSplitting,
           currentIndex: activeVerse.slideIndex || 0
-        } 
+        }
       });
-      localStorage.setItem('biblePresentationCommand', JSON.stringify({ 
-        action: 'slideInfo', 
-        data: { 
+      localStorage.setItem('biblePresentationCommand', JSON.stringify({
+        action: 'slideInfo',
+        data: {
           totalSlides: result.slides.length,
           requiresSplitting: result.requiresSplitting,
           currentIndex: activeVerse.slideIndex || 0
-        } 
+        }
       }));
       channel.close();
     }
@@ -217,13 +253,10 @@ function PresentationContent() {
         <div className="overlay-metadata-bar">
           <div className="overlay-year">{reference}</div>
           <div className="overlay-title"></div>
-          {activeVerse && activeVerse.totalSlides && activeVerse.totalSlides > 1 && (
-            <div className="overlay-para">{(activeVerse.slideIndex || 0) + 1}/{activeVerse.totalSlides}</div>
-          )}
         </div>
         <div className="overlay-quote-container">
           <div className="overlay-quote-text">
-            {activeVerse?.text}
+            {activeVerse?.text.replace(/^["']|["']$/g, '')}
           </div>
         </div>
       </div>

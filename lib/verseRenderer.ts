@@ -22,25 +22,28 @@ export interface VerseSlide {
 export interface VerseRenderResult {
   slides: VerseSlide[];
   requiresSplitting: boolean;
+  scaledFontSize: number;
+  dynamicPaddingTop: number;
+  dynamicPaddingBottom: number;
 }
 
 /**
  * Calculate available text area in the presentation lower-third.
  * Canvas is 1920×1080.  Lower-third: 324 px.  Metadata bar: 56 px.
- * Padding: 10 top / 10 bottom / 60 left / 60 right.
+ * Available vertical space: 268px (324 - 56) for text + padding.
+ * Font size is passed as parameter - only width scales with viewport.
  */
-function getAvailableTextArea(): {
+function getAvailableTextArea(scale: number = 1): {
   width: number;
   height: number;
 } {
   const lowerThirdHeight = 324;
   const metadataHeight  = 56;
-  const padV = 20;   // 10 top + 10 bottom
   const padH = 120;  // 60 left + 60 right
 
   return {
-    width:  1920 - padH,
-    height: lowerThirdHeight - metadataHeight - padV,
+    width:  (1920 - padH) * scale,
+    height: (lowerThirdHeight - metadataHeight), // Full vertical space for text + padding
   };
 }
 
@@ -133,9 +136,8 @@ function measureTextHeight(
 }
 
 /**
- * Split a verse into slides so that each slide holds at most
- * `maxLinesPerSlide` wrapped lines.  Every slide is filled to capacity
- * before a new one is opened.
+ * Split a verse into slides with maximum lines based on available height.
+ * If adding a word would exceed the available lines, move to next slide.
  */
 function splitVerseIntoSlides(
   text:            string,
@@ -146,28 +148,81 @@ function splitVerseIntoSlides(
   lineHeight:      number,
   fontFamily:      string,
 ): VerseSlide[] {
-  const lines            = wrapText(text, maxWidth, fontSize, fontFamily);
-  const lineHeightPx     = fontSize * lineHeight;
+  const words = text.trim().split(/\s+/).filter(w => w.length > 0);
+  const lineHeightPx = fontSize * lineHeight;
   const maxLinesPerSlide = Math.max(1, Math.floor(availableHeight / lineHeightPx));
 
-  if (lines.length <= maxLinesPerSlide) {
+  console.log('[VerseRenderer] Splitting logic:', {
+    text: text.substring(0, 50) + '...',
+    availableHeight: availableHeight.toFixed(2),
+    fontSize: fontSize.toFixed(2),
+    lineHeight: lineHeight,
+    lineHeightPx: lineHeightPx.toFixed(2),
+    maxLinesPerSlide,
+    maxWidth: maxWidth.toFixed(2),
+    totalWords: words.length,
+    calculation: `${availableHeight.toFixed(2)} / ${lineHeightPx.toFixed(2)} = ${(availableHeight / lineHeightPx).toFixed(2)}`
+  });
+
+  if (words.length === 0) {
     return [{ text, verseNumber, slideNumber: 1, totalSlides: 1 }];
   }
 
   const slides: VerseSlide[] = [];
-  const totalSlides = Math.ceil(lines.length / maxLinesPerSlide);
+  let currentSlideWords: string[] = [];
+  let currentSlideLines: string[] = [];
 
-  for (let i = 0; i < totalSlides; i++) {
-    const start      = i * maxLinesPerSlide;
-    const end        = Math.min(start + maxLinesPerSlide, lines.length);
-    const slideText  = lines.slice(start, end).join(' ');
+  for (const word of words) {
+    // Try adding this word to current slide
+    const testText = currentSlideWords.length > 0
+      ? [...currentSlideWords, word].join(' ')
+      : word;
+
+    const testLines = wrapText(testText, maxWidth, fontSize, fontFamily);
+
+    console.log('[VerseRenderer] Testing word:', word, {
+      currentSlideWords: currentSlideWords.length,
+      testLines: testLines.length,
+      maxLines: maxLinesPerSlide,
+      fits: testLines.length <= maxLinesPerSlide
+    });
+
+    if (testLines.length <= maxLinesPerSlide) {
+      // Word fits on current slide
+      currentSlideWords.push(word);
+      currentSlideLines = testLines;
+    } else {
+      // Word doesn't fit, create new slide with current words
+      console.log('[VerseRenderer] Creating new slide, current words:', currentSlideWords.length);
+      if (currentSlideWords.length > 0) {
+        slides.push({
+          text: currentSlideWords.join(' '),
+          verseNumber,
+          slideNumber: slides.length + 1,
+          totalSlides: 0,
+        });
+      }
+      // Start new slide with this word
+      currentSlideWords = [word];
+      currentSlideLines = wrapText(word, maxWidth, fontSize, fontFamily);
+    }
+  }
+
+  // Add final slide if it has content
+  if (currentSlideWords.length > 0) {
     slides.push({
-      text: slideText,
+      text: currentSlideWords.join(' '),
       verseNumber,
-      slideNumber:  i + 1,
-      totalSlides,
+      slideNumber: slides.length + 1,
+      totalSlides: 0,
     });
   }
+
+  // Update total slides count
+  const totalSlides = slides.length;
+  slides.forEach(slide => slide.totalSlides = totalSlides);
+
+  console.log('[VerseRenderer] Final slides:', totalSlides, slides.map(s => ({ text: s.text.substring(0, 30) + '...', words: s.text.split(' ').length })));
 
   return slides;
 }
@@ -175,29 +230,64 @@ function splitVerseIntoSlides(
 /**
  * Main entry point.
  * Renders a verse into one or more slides that fit the presentation overlay.
+ * Auto-scales font size if text doesn't fit, and calculates dynamic padding.
  */
 export function renderVerseForPresentation(
   text:       string,
   verseNumber: string,
-  fontSize:   number = 69,
+  fontSize:   number = 46,
   lineHeight: number = 1.5,
   fontFamily: string = 'Crimson Text, serif',
+  scale:      number = 1,
 ): VerseRenderResult {
-  const { width: maxWidth, height: availableHeight } = getAvailableTextArea();
-  const fullHeight = measureTextHeight(text, fontSize, fontFamily, lineHeight, maxWidth);
+  const { width: maxWidth, height: totalAvailableHeight } = getAvailableTextArea(scale);
+  const maxFontSize = 52;
+  const minFontSize = 24;
+  const minPadding = 1;
 
-  if (fullHeight <= availableHeight) {
+  // Auto-scale font size if text doesn't fit
+  let scaledFontSize = Math.min(fontSize, maxFontSize);
+  let fullHeight = measureTextHeight(text, scaledFontSize, fontFamily, lineHeight, maxWidth);
+
+  while (fullHeight > (totalAvailableHeight - minPadding * 2) && scaledFontSize > minFontSize) {
+    scaledFontSize -= 2;
+    fullHeight = measureTextHeight(text, scaledFontSize, fontFamily, lineHeight, maxWidth);
+  }
+
+  // Calculate dynamic padding to center text
+  // Use fixed small padding to prevent overflow
+  const dynamicPadding = 1; // Fixed small padding
+  const textAvailableHeight = totalAvailableHeight - dynamicPadding * 2;
+
+  console.log('[VerseRenderer] Dynamic calculation:', {
+    totalAvailableHeight,
+    fullHeight,
+    dynamicPadding,
+    scaledFontSize,
+    fontSize
+  });
+
+  if (fullHeight <= textAvailableHeight) {
     return {
       slides: [{ text, verseNumber, slideNumber: 1, totalSlides: 1 }],
       requiresSplitting: false,
+      scaledFontSize,
+      dynamicPaddingTop: dynamicPadding,
+      dynamicPaddingBottom: dynamicPadding,
     };
   }
 
   const slides = splitVerseIntoSlides(
-    text, verseNumber, availableHeight, maxWidth, fontSize, lineHeight, fontFamily,
+    text, verseNumber, textAvailableHeight, maxWidth, scaledFontSize, lineHeight, fontFamily,
   );
 
-  return { slides, requiresSplitting: true };
+  return {
+    slides,
+    requiresSplitting: true,
+    scaledFontSize,
+    dynamicPaddingTop: dynamicPadding,
+    dynamicPaddingBottom: dynamicPadding,
+  };
 }
 
 /**
@@ -205,7 +295,7 @@ export function renderVerseForPresentation(
  */
 export function requiresVerseSplitting(
   text:       string,
-  fontSize:   number = 69,
+  fontSize:   number = 46,
   lineHeight: number = 1.5,
   fontFamily: string = 'Crimson Text, serif',
 ): boolean {

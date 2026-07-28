@@ -312,11 +312,6 @@ export const BibleReader: React.FC = () => {
           const isReading = item.verseIndex === readingVerseIndex && item.slideIndex === readingSlideIndex;
           const isLive = item.verseIndex === liveVerseIndex && item.slideIndex === presentationSlideIndex;
           
-          // Formulate label e.g. "v 5 (1/2)" or "v 5"
-          const label = item.totalSlides > 1
-            ? `v ${item.verseNum} (${item.slideNumber}/${item.totalSlides})`
-            : `v ${item.verseNum}`;
-          
           return (
             <div
               key={idx}
@@ -335,32 +330,32 @@ export const BibleReader: React.FC = () => {
             >
               <div style={{
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'flex-start',
                 justifyContent: 'space-between',
-                padding: '7px 10px',
-                borderBottom: '1px solid var(--border)',
-                userSelect: 'none'
+                padding: '8px 12px 10px',
+                fontFamily: "'Crimson Text', serif",
+                fontSize: '15px',
+                lineHeight: 1.65,
+                color: isLive ? '#d4f7e4' : (isReading ? 'var(--text-primary)' : 'var(--text-muted)'),
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
-                  <div style={{
-                    width: '7px',
-                    height: '7px',
-                    borderRadius: '50%',
-                    background: isLive ? 'var(--green)' : (isReading ? 'var(--border-active)' : 'var(--border-mid)'),
-                    flexShrink: 0,
-                    transition: 'background 0.2s',
-                    boxShadow: isLive ? '0 0 5px var(--green)' : undefined
-                  }} />
+                <div style={{ display: 'inline', alignItems: 'baseline', flex: 1 }}>
                   <span style={{
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    color: isLive ? 'var(--green)' : 'var(--text-dim)',
-                    letterSpacing: '0.04em'
+                    background: 'var(--bg-active)',
+                    color: 'var(--text-primary)',
+                    padding: '2px 6px',
+                    borderRadius: '4px',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    minWidth: '20px',
+                    textAlign: 'center',
+                    display: 'inline-block',
+                    verticalAlign: 'baseline',
+                    marginRight: '8px'
                   }}>
-                    {label}
+                    {item.verseNum}
                   </span>
+                  <span>{item.text}</span>
                 </div>
-                {/* Save to List button */}
                 <button
                   onClick={e => {
                     e.stopPropagation();
@@ -387,6 +382,8 @@ export const BibleReader: React.FC = () => {
                     justifyContent: 'center',
                     transition: 'all 0.12s',
                     fontFamily: 'Inter, sans-serif',
+                    flexShrink: 0,
+                    marginLeft: '8px'
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.borderColor = 'var(--text-primary)';
@@ -400,18 +397,6 @@ export const BibleReader: React.FC = () => {
                 >
                   +
                 </button>
-              </div>
-              <div style={{
-                padding: '8px 12px 10px',
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '15px',
-                lineHeight: 1.65,
-                color: isLive ? '#d4f7e4' : (isReading ? 'var(--text-primary)' : 'var(--text-muted)'),
-                wordWrap: 'break-word',
-                overflowWrap: 'break-word',
-                whiteSpace: 'normal'
-              }}>
-                {item.text}
               </div>
             </div>
           );

@@ -24,6 +24,7 @@
   --green-border: rgba(34, 197, 94, 0.50);
   --radius: 7px;
   --radius-sm: 4px;
+  --viewport-scale: 1;
 }
 
 body {
@@ -66,12 +67,12 @@ html, body {
 
 .presentation-canvas-container {
   position: absolute;
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   background: transparent;
   overflow: hidden;
   transform-origin: top left;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: none;
 }
 
 .presentation-canvas-container.banner-mode {
@@ -105,14 +106,14 @@ html, body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 324px;
+  height: calc(324px * var(--viewport-scale, 1));
   background: rgba(0, 0, 0, 0.78);
-  border-top: 3px solid rgba(255,255,255,0.7);
+  border-top: calc(3px * var(--viewport-scale, 1)) solid rgba(255,255,255,0.7);
   z-index: 10;
   display: flex;
   flex-direction: column;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(calc(40px * var(--viewport-scale, 1)));
   transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1);
   backdrop-filter: blur(12px);
 }
@@ -128,9 +129,9 @@ html, body {
 }
 
 .overlay-metadata-bar {
-  height: var(--metadata-height, 56px);
-  padding: var(--metadata-padding-top, 10px) var(--metadata-padding-right, 45px) var(--metadata-padding-bottom, 10px) var(--metadata-padding-left, 45px);
-  border-bottom: var(--metadata-border-bottom-width, 2px) solid rgba(255,255,255,0.7);
+  height: calc(var(--metadata-height, 56px) * var(--viewport-scale, 1));
+  padding: calc(var(--metadata-padding-top, 10px) * var(--viewport-scale, 1)) calc(var(--metadata-padding-right, 45px) * var(--viewport-scale, 1)) calc(var(--metadata-padding-bottom, 10px) * var(--viewport-scale, 1)) calc(var(--metadata-padding-left, 45px) * var(--viewport-scale, 1));
+  border-bottom: calc(var(--metadata-border-bottom-width, 2px) * var(--viewport-scale, 1)) solid rgba(255,255,255,0.7);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -166,17 +167,17 @@ html, body {
 
 .overlay-quote-container {
   flex: 1;
-  padding: var(--quote-padding-top, 10px) var(--quote-padding-right, 60px) var(--quote-padding-bottom, 10px) var(--quote-padding-left, 60px);
+  padding: var(--dynamic-padding-top, 1px) calc(var(--quote-padding-right, 60px) * var(--viewport-scale, 1)) var(--dynamic-padding-bottom, 1px) calc(var(--quote-padding-left, 60px) * var(--viewport-scale, 1));
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .overlay-quote-text {
-  font-size: var(--quote-font-size, 69px);
-  line-height: var(--quote-line-height, 1.5);
+  font-size: var(--quote-font-size, 42px);
+  line-height: var(--quote-line-height, 1.2);
   color: #ffffff;
-  font-family: var(--quote-font-family, 'Crimson Text', serif);
+  font-family: var(--quote-font-family, 'Crimson Text, serif');
   white-space: pre-wrap;
   word-wrap: break-word;
 }

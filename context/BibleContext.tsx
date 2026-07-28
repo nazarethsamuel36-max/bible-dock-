@@ -4,7 +4,22 @@ import React, { createContext, useContext, useReducer, useCallback, useEffect, u
 import { renderVerseForPresentation } from '../lib/verseRenderer';
 
 export function splitVerseToSlides(text: string): string[] {
-  const result = renderVerseForPresentation(text, '', 69);
+  // Read font size from CSS variable
+  const computedStyle = typeof window !== 'undefined' ? getComputedStyle(document.documentElement) : null;
+  const fontSizeStr = computedStyle?.getPropertyValue('--quote-font-size').trim();
+  const fontSize = fontSizeStr ? parseInt(fontSizeStr, 10) : 46;
+  const lineHeightStr = computedStyle?.getPropertyValue('--quote-line-height').trim();
+  const lineHeight = lineHeightStr ? parseFloat(lineHeightStr) : 1;
+
+  const result = renderVerseForPresentation(text, '', fontSize, lineHeight, 'Crimson Text, serif', 1);
+
+  // Apply dynamic padding and scaled font size via CSS variables
+  if (typeof window !== 'undefined') {
+    document.documentElement.style.setProperty('--dynamic-padding-top', `${result.dynamicPaddingTop}px`);
+    document.documentElement.style.setProperty('--dynamic-padding-bottom', `${result.dynamicPaddingBottom}px`);
+    document.documentElement.style.setProperty('--quote-font-size', `${result.scaledFontSize}px`);
+  }
+
   return result.slides.map(slide => slide.text);
 }
 
