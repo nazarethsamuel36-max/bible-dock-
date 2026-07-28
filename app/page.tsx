@@ -6,8 +6,6 @@ import Link from 'next/link';
 export default function LandingPage() {
   const [copiedDock, setCopiedDock] = useState<boolean>(false);
   const [copiedOverlay, setCopiedOverlay] = useState<boolean>(false);
-  const [copiedOverlayPreview, setCopiedOverlayPreview] = useState<boolean>(false);
-  const [copiedOverlayBanner, setCopiedOverlayBanner] = useState<boolean>(false);
 
   const copyToClipboard = (text: string, setCopiedState: (v: boolean) => void) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -31,8 +29,6 @@ export default function LandingPage() {
   const domain = 'https://hindienglishbible-dock.vercel.app';
   const dockUrl = `${domain}/dock`;
   const overlayUrl = `${domain}/presentation`;
-  const overlayPreviewUrl = `${domain}/presentation?preview=true`;
-  const overlayBannerUrl = `${domain}/presentation?banner=true`;
 
   return (
     <div style={{
@@ -217,135 +213,24 @@ export default function LandingPage() {
                 {copiedOverlay ? 'Copied!' : 'Copy'}
               </button>
             </div>
-            <div style={{
-              background: 'rgba(0, 0, 0, 0.3)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '8px',
-              padding: '12px',
-              marginBottom: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '8px'
-            }}>
-              <span style={{
-                fontSize: '13px',
-                color: '#e2e8f0',
-                fontFamily: 'monospace',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap'
-              }}>
-                {overlayPreviewUrl}
-              </span>
-              <button
-                onClick={() => copyToClipboard(overlayPreviewUrl, setCopiedOverlayPreview)}
-                style={{
-                  padding: '6px 12px',
-                  background: copiedOverlayPreview ? '#48bb78' : 'rgba(255, 255, 255, 0.1)',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: '6px',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  transition: 'all 0.2s'
-                }}
-              >
-                {copiedOverlayPreview ? 'Copied!' : 'Copy'}
-              </button>
-            </div>
-            <div style={{
-              background: 'rgba(0, 0, 0, 0.3)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '8px',
-              padding: '12px',
-              marginBottom: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '8px'
-            }}>
-              <span style={{
-                fontSize: '13px',
-                color: '#e2e8f0',
-                fontFamily: 'monospace',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap'
-              }}>
-                {overlayBannerUrl}
-              </span>
-              <button
-                onClick={() => copyToClipboard(overlayBannerUrl, setCopiedOverlayBanner)}
-                style={{
-                  padding: '6px 12px',
-                  background: copiedOverlayBanner ? '#48bb78' : 'rgba(255, 255, 255, 0.1)',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: '6px',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  transition: 'all 0.2s'
-                }}
-              >
-                {copiedOverlayBanner ? 'Copied!' : 'Copy'}
-              </button>
-            </div>
-            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link
-                href="/presentation"
-                style={{
-                  padding: '12px 20px',
-                  background: '#48bb78',
-                  color: '#fff',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  fontWeight: 600,
-                  fontSize: '13px',
-                  transition: 'background 0.2s'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.background = '#38a169'}
-                onMouseLeave={(e) => e.currentTarget.style.background = '#48bb78'}
-              >
-                Live (Transparent)
-              </Link>
-              <Link
-                href="/presentation?preview=true"
-                style={{
-                  padding: '12px 20px',
-                  background: '#4a5568',
-                  color: '#fff',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  fontWeight: 600,
-                  fontSize: '13px',
-                  transition: 'background 0.2s'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.background = '#2d3748'}
-                onMouseLeave={(e) => e.currentTarget.style.background = '#4a5568'}
-              >
-                Preview Mode
-              </Link>
-              <Link
-                href="/presentation?banner=true"
-                style={{
-                  padding: '12px 20px',
-                  background: '#2d3748',
-                  color: '#fff',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  fontWeight: 600,
-                  fontSize: '13px',
-                  transition: 'background 0.2s'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.background = '#1a202c'}
-                onMouseLeave={(e) => e.currentTarget.style.background = '#2d3748'}
-              >
-                Banner Mode
-              </Link>
-            </div>
+            <Link
+              href="/presentation"
+              style={{
+                display: 'block',
+                padding: '12px 24px',
+                background: '#48bb78',
+                color: '#fff',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: 600,
+                fontSize: '14px',
+                transition: 'background 0.2s'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = '#38a169'}
+              onMouseLeave={(e) => e.currentTarget.style.background = '#48bb78'}
+            >
+              Open Presentation
+            </Link>
           </div>
         </div>
 
