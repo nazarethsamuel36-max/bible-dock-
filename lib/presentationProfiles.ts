@@ -35,10 +35,10 @@ export const DEFAULT_OBS_RESOLUTION: Resolution = {
  */
 const FALLBACK_FRAME: PresentationFrame = {
   quoteWidth: 1800, // 1920 - 120 (60px padding on each side)
-  quoteHeight: 294,
+  quoteHeight: 174,
   fontFamily: '"Noto Serif", serif',
-  fontSize: 52,
-  lineHeight: 1.2,
+  fontSize: 50,
+  lineHeight: 1.3,
 };
 
 function parseLineHeightRatio(lineHeightStr: string | undefined, fontSize: number): number {
