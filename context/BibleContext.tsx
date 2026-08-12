@@ -290,12 +290,16 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
           dispatch({ type: 'SET_PRESENTATION_SLIDE', payload: { index: slideIndex, total: slides.length } });
           
           const verseData = {
-            book: current.currentBook,
+            book: current.language === 'hi'
+              ? (current.bibleIndex?.[current.currentBook]?.hi || current.currentBook)
+              : current.currentBook,
             chapter: current.currentChapter,
             verse: verseNum,
             text: fullVerseText,
             slides: slides,
-            reference: `${current.currentBook} ${current.currentChapter}:${verseNum}`,
+            reference: `${current.language === 'hi'
+              ? (current.bibleIndex?.[current.currentBook]?.hi || current.currentBook)
+              : current.currentBook} ${current.currentChapter}:${verseNum}`,
             slideIndex: slideIndex,
             totalSlides: slides.length
           };
@@ -417,12 +421,15 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
       
       // Send verse to presentation
       const verseText = bookData.chapters[targetChapter][targetVerse];
+      const displayName = current.language === 'hi'
+        ? (current.bibleIndex[bookName]?.hi || bookName)
+        : bookName;
       const verseData = {
-        book: bookName,
+        book: displayName,
         chapter: targetChapter,
         verse: targetVerse,
         text: verseText,
-        reference: `${bookName} ${targetChapter}:${targetVerse}`,
+        reference: `${displayName} ${targetChapter}:${targetVerse}`,
         slideIndex: 0
       };
       const channel = new BroadcastChannel('bible_presentation_channel');

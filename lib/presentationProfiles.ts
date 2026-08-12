@@ -35,9 +35,9 @@ export const DEFAULT_OBS_RESOLUTION: Resolution = {
  */
 const FALLBACK_FRAME: PresentationFrame = {
   quoteWidth: 1800, // 1920 - 120 (60px padding on each side)
-  quoteHeight: 300,
-  fontFamily: '"Times New Roman", serif',
-  fontSize: 48,
+  quoteHeight: 294,
+  fontFamily: '"Noto Serif", serif',
+  fontSize: 52,
   lineHeight: 1.2,
 };
 
