@@ -188,7 +188,7 @@ export const BibleSetlist: React.FC = () => {
               {/* Verse text */}
               <div style={{
                 padding: '8px 12px 10px',
-                fontFamily: "'Crimson Text', serif",
+                fontFamily: "'Noto Serif', serif",
                 fontSize: '15px',
                 lineHeight: 1.65,
                 color: 'var(--text-dim)',

@@ -1,26 +1,16 @@
 'use client';
 
 import React, { createContext, useContext, useReducer, useCallback, useEffect, useRef } from 'react';
-import { renderVerseForPresentation } from '../lib/verseRenderer';
+import { renderVerseWithDOMLayout } from '../lib/verseRenderer';
+import { buildOBSFrame } from '../lib/presentationProfiles';
 
+// Dock-side preview uses the OBS profile (the configured OBS Browser Source
+// resolution) so the reader's slide counts match what the OBS window will show.
+// The presentation window is the source of truth and re-splits with its own
+// measured frame when it receives a verse.
 export function splitVerseToSlides(text: string): string[] {
-  // Read font size from CSS variable
-  const computedStyle = typeof window !== 'undefined' ? getComputedStyle(document.documentElement) : null;
-  const fontSizeStr = computedStyle?.getPropertyValue('--quote-font-size').trim();
-  const fontSize = fontSizeStr ? parseInt(fontSizeStr, 10) : 46;
-  const lineHeightStr = computedStyle?.getPropertyValue('--quote-line-height').trim();
-  const lineHeight = lineHeightStr ? parseFloat(lineHeightStr) : 1;
-
-  const result = renderVerseForPresentation(text, '', fontSize, lineHeight, 'Crimson Text, serif', 1);
-
-  // Apply dynamic padding and scaled font size via CSS variables
-  if (typeof window !== 'undefined') {
-    document.documentElement.style.setProperty('--dynamic-padding-top', `${result.dynamicPaddingTop}px`);
-    document.documentElement.style.setProperty('--dynamic-padding-bottom', `${result.dynamicPaddingBottom}px`);
-    document.documentElement.style.setProperty('--quote-font-size', `${result.scaledFontSize}px`);
-  }
-
-  return result.slides.map(slide => slide.text);
+  const result = renderVerseWithDOMLayout(text, '', buildOBSFrame());
+  return result.slides.map(s => s.text);
 }
 
 interface BibleIndex {
@@ -244,6 +234,18 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
   }, []);
 
   const setLanguage = useCallback((lang: 'en' | 'hi') => {
+    const current = stateRef.current;
+
+    // If a slide is live and the language changes, stop broadcasting and
+    // clear the presentation display immediately (the old-language text no longer applies)
+    if (lang !== current.language && current.liveVerseIndex >= 0) {
+      dispatch({ type: 'CLEAR_LIVE_VERSE' });
+      const channel = new BroadcastChannel('bible_presentation_channel');
+      channel.postMessage({ action: 'clearDisplay' });
+      localStorage.setItem('biblePresentationCommand', JSON.stringify({ action: 'clearDisplay' }));
+      channel.close();
+    }
+
     dispatch({ type: 'SET_LANGUAGE', payload: lang });
   }, []);
 
@@ -284,7 +286,6 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
           const verseNum = Object.keys(bookData.chapters[current.currentChapter])[index];
           const fullVerseText = bookData.chapters[current.currentChapter][verseNum];
           const slides = splitVerseToSlides(fullVerseText);
-          const slideText = slides[slideIndex] || fullVerseText;
           
           dispatch({ type: 'SET_PRESENTATION_SLIDE', payload: { index: slideIndex, total: slides.length } });
           
@@ -292,7 +293,8 @@ export const BibleContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
             book: current.currentBook,
             chapter: current.currentChapter,
             verse: verseNum,
-            text: slideText,
+            text: fullVerseText,
+            slides: slides,
             reference: `${current.currentBook} ${current.currentChapter}:${verseNum}`,
             slideIndex: slideIndex,
             totalSlides: slides.length

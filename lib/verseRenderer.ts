@@ -1,16 +1,41 @@
 /**
- * Bible Verse Rendering Utility
- * Handles text measurement and intelligent verse splitting for presentation.
+ * Bible Verse Slide Generation — DOM-Layout Engine
  *
- * Strategy: use a word-aware greedy line-packer.
- * - On the client we try canvas measureText with a sanity check.
- * - If the font is not loaded yet (canvas returns suspiciously small widths)
- *   we fall back to the character-width estimate.
- * - On the server we always use the character-width estimate.
- * - Hindi (Devanagari) text is detected and given a slightly wider multiplier
- *   because Devanagari glyphs + matras are wider than Latin glyphs at the
- *   same font-size.
+ * The renderer is a deterministic pure function:
+ *
+ *   PresentationFrame + Verse text  →  VerseSlide[]
+ *
+ * The renderer has NO knowledge of any target resolution (no 1920×1080, no
+ * fixed quote sizes). It always thinks: "I render inside this rectangle."
+ *
+ * The frame is built by a Presentation Profile (see lib/presentationProfiles.ts)
+ * and describes the actual rendering rectangle at render time:
+ *   • quoteWidth  — available text width in px
+ *   • quoteHeight — maximum text height per slide in px
+ *   • fontFamily / fontSize / lineHeight — fixed design system, never scaled
+ *
+ * Both quoteWidth and quoteHeight are measured from the real layout — never
+ * assumed, never hardcoded. The renderer just fills whatever rectangle it is
+ * given.
+ *
+ * Strategy: word-aware greedy line-packer measured against the real browser.
+ *  - On the client we build a hidden element mirroring the quote box and read
+ *    `el.scrollHeight` word-by-word.
+ *  - If the font is not loaded yet we fall back to a character-width estimate.
  */
+
+export interface PresentationFrame {
+  /** Available text width in px — measured from the real quote container. */
+  quoteWidth: number;
+  /** Maximum text height per slide in px — measured from the real layout. */
+  quoteHeight: number;
+  /** Font family used by the quote text. */
+  fontFamily: string;
+  /** Font size in px. */
+  fontSize: number;
+  /** Unitless line-height. */
+  lineHeight: number;
+}
 
 export interface VerseSlide {
   text: string;
@@ -22,283 +47,244 @@ export interface VerseSlide {
 export interface VerseRenderResult {
   slides: VerseSlide[];
   requiresSplitting: boolean;
-  scaledFontSize: number;
-  dynamicPaddingTop: number;
-  dynamicPaddingBottom: number;
 }
 
 /**
- * Calculate available text area in the presentation lower-third.
- * Canvas is 1920×1080.  Lower-third: 324 px.  Metadata bar: 56 px.
- * Available vertical space: 268px (324 - 56) for text + padding.
- * Font size is passed as parameter - only width scales with viewport.
+ * Creates a hidden DOM element whose CSS exactly mirrors the presentation
+ * quote area.  The caller is responsible for removing it from the document.
  */
-function getAvailableTextArea(scale: number = 1): {
-  width: number;
-  height: number;
-} {
-  const lowerThirdHeight = 324;
-  const metadataHeight  = 56;
-  const padH = 120;  // 60 left + 60 right
+function createMeasurementElement(frame: PresentationFrame): HTMLDivElement {
+  const el = document.createElement('div');
 
-  return {
-    width:  (1920 - padH) * scale,
-    height: (lowerThirdHeight - metadataHeight), // Full vertical space for text + padding
-  };
+  // Position within layout flow but invisible to avoid skipped calculations
+  el.style.position      = 'fixed';
+  el.style.top           = '0';
+  el.style.left          = '0';
+  el.style.height        = 'auto';
+  el.style.bottom        = 'auto';
+  el.style.zIndex        = '-9999';
+  el.style.overflow      = 'hidden';
+
+  // Mirror the quote text box sizing
+  el.style.width         = `${frame.quoteWidth}px`;
+  el.style.fontFamily    = frame.fontFamily;
+  el.style.fontSize      = `${frame.fontSize}px`;
+  el.style.lineHeight    = `${frame.lineHeight}`;
+  el.style.fontWeight    = 'normal';
+  el.style.letterSpacing = 'normal';
+  el.style.fontStyle     = 'normal';
+
+  // Match wrapping rules
+  el.style.whiteSpace    = 'normal';
+  el.style.wordWrap      = 'break-word';
+  el.style.overflowWrap  = 'break-word';
+
+  // Zero out all box model extras
+  el.style.padding       = '0';
+  el.style.margin        = '0';
+  el.style.border        = 'none';
+  el.style.boxSizing     = 'border-box';
+
+  // Make invisible but still laid-out
+  el.style.visibility    = 'hidden';
+  el.style.pointerEvents = 'none';
+  el.style.userSelect    = 'none';
+
+  return el;
 }
 
 /**
- * Detect whether text is predominantly Hindi/Devanagari.
- * Returns a per-character average-width multiplier relative to fontSize.
- * Latin  Crimson Text at 69 px: a typical character is ~0.52 × fontSize.
- * Devanagari (system fallback)  is ~0.65 × fontSize (wider, with matras).
+ * DOM-based word-by-word slide builder (client only).
+ *
+ * For every word in the verse:
+ *   1. Tentatively append it to the current slide buffer.
+ *   2. Ask the browser for the rendered height (el.scrollHeight).
+ *   3. If the height still fits within frame.quoteHeight, keep the word.
+ *   4. If it overflows, close the current slide and open a new one.
+ *
+ * This is 100% browser-truth — no canvas, no estimation, no character math.
  */
-function charWidthMultiplier(text: string): number {
-  const devanagari = (text.match(/[\u0900-\u097F]/g) || []).length;
-  const nonSpace   = text.replace(/\s/g, '').length || 1;
-  return devanagari / nonSpace > 0.3 ? 0.65 : 0.52;
+function remoteLog(message: string) {
+  console.info(message);
 }
 
-/**
- * Build a measure function.
- * On the client we attempt canvas, but sanity-check the result.
- * If the font gives implausibly small widths (not loaded yet), we fall back.
- */
-function buildMeasureFn(
-  text:       string,
-  fontSize:   number,
-  fontFamily: string,
-): (segment: string) => number {
-  const mult = charWidthMultiplier(text);
-  const approx = (t: string) =>
-    t.replace(/\s/g, '').length * fontSize * mult +
-    Math.max(0, t.split(' ').length - 1) * fontSize * 0.25;
-
-  if (typeof document === 'undefined') return approx;
-
-  const canvas = document.createElement('canvas');
-  const ctx    = canvas.getContext('2d');
-  if (!ctx) return approx;
-
-  ctx.font = `${fontSize}px ${fontFamily}`;
-
-  // Sanity-check: 'W' in a properly-loaded 69 px font should be > 30 px.
-  const wWidth = ctx.measureText('W').width;
-  if (wWidth < fontSize * 0.25 || wWidth > fontSize * 1.5) return approx;
-
-  return (t: string) => ctx.measureText(t).width;
-}
-
-/**
- * Word-aware text wrapper.  Splits ONLY at spaces — never mid-word,
- * never at punctuation boundaries.  Works on both server and client.
- */
-function wrapText(
-  text:       string,
-  maxWidth:   number,
-  fontSize:   number,
-  fontFamily: string,
-): string[] {
-  // Normalise whitespace; split into words
-  const words = text.trim().split(/\s+/).filter(w => w.length > 0);
-  if (words.length === 0) return [text];
-
-  const measure = buildMeasureFn(text, fontSize, fontFamily);
-  const lines: string[] = [];
-  let   current = '';
-
-  for (const word of words) {
-    const candidate = current ? `${current} ${word}` : word;
-    if (current && measure(candidate) > maxWidth) {
-      lines.push(current);
-      current = word;
-    } else {
-      current = candidate;
-    }
+export function renderVerseWithDOMLayout(
+  text: string,
+  verseNumber: string,
+  frame: PresentationFrame,
+): VerseRenderResult {
+  if (typeof document === 'undefined') {
+    // Server-side static generation: fall back to estimation
+    return estimateSplit(text, verseNumber, frame);
   }
-  if (current) lines.push(current);
 
-  return lines.length > 0 ? lines : [text];
-}
+  // Check if the primary family is loaded; if not, estimation is more
+  // reliable than measuring with a wrong fallback font.
+  const primaryFamily = frame.fontFamily.split(',')[0].replace(/['"]/g, '').trim();
+  const fontReady =
+    document.fonts &&
+    document.fonts.check(`${frame.fontSize}px "${primaryFamily}"`);
 
-/**
- * Measure the total pixel height the text will occupy when wrapped.
- */
-function measureTextHeight(
-  text:       string,
-  fontSize:   number,
-  fontFamily: string,
-  lineHeight: number,
-  maxWidth:   number,
-): number {
-  const lines = wrapText(text, maxWidth, fontSize, fontFamily);
-  return lines.length * fontSize * lineHeight;
-}
+  if (!fontReady) {
+    return estimateSplit(text, verseNumber, frame);
+  }
 
-/**
- * Split a verse into slides with maximum lines based on available height.
- * If adding a word would exceed the available lines, move to next slide.
- */
-function splitVerseIntoSlides(
-  text:            string,
-  verseNumber:     string,
-  availableHeight: number,
-  maxWidth:        number,
-  fontSize:        number,
-  lineHeight:      number,
-  fontFamily:      string,
-): VerseSlide[] {
-  const words = text.trim().split(/\s+/).filter(w => w.length > 0);
-  const lineHeightPx = fontSize * lineHeight;
-  const maxLinesPerSlide = Math.max(1, Math.floor(availableHeight / lineHeightPx));
-
-  console.log('[VerseRenderer] Splitting logic:', {
-    text: text.substring(0, 50) + '...',
-    availableHeight: availableHeight.toFixed(2),
-    fontSize: fontSize.toFixed(2),
-    lineHeight: lineHeight,
-    lineHeightPx: lineHeightPx.toFixed(2),
-    maxLinesPerSlide,
-    maxWidth: maxWidth.toFixed(2),
-    totalWords: words.length,
-    calculation: `${availableHeight.toFixed(2)} / ${lineHeightPx.toFixed(2)} = ${(availableHeight / lineHeightPx).toFixed(2)}`
-  });
-
+  const words = text.trim().split(/\s+/).filter(Boolean);
   if (words.length === 0) {
-    return [{ text, verseNumber, slideNumber: 1, totalSlides: 1 }];
+    return singleSlide(text, verseNumber);
   }
 
-  const slides: VerseSlide[] = [];
-  let currentSlideWords: string[] = [];
-  let currentSlideLines: string[] = [];
+  const el = createMeasurementElement(frame);
+  document.body.appendChild(el);
+
+  const maxHeight   = frame.quoteHeight;
+  const slideTexts: string[] = [];
+  let   buffer: string[] = [];
+
+  remoteLog(`Frame
+------
+Width: ${frame.quoteWidth}px
+Height: ${maxHeight}px
+
+Verse
+------
+${verseNumber || 'Text'}`);
+
+  let iteration = 0;
 
   for (const word of words) {
-    // Try adding this word to current slide
-    const testText = currentSlideWords.length > 0
-      ? [...currentSlideWords, word].join(' ')
+    iteration++;
+    const candidate = buffer.length > 0
+      ? `${buffer.join(' ')} ${word}`
       : word;
 
-    const testLines = wrapText(testText, maxWidth, fontSize, fontFamily);
+    el.textContent = candidate;
+    const h = el.scrollHeight;
 
-    console.log('[VerseRenderer] Testing word:', word, {
-      currentSlideWords: currentSlideWords.length,
-      testLines: testLines.length,
-      maxLines: maxLinesPerSlide,
-      fits: testLines.length <= maxLinesPerSlide
-    });
+    const fits = h <= maxHeight || buffer.length === 0;
 
-    if (testLines.length <= maxLinesPerSlide) {
-      // Word fits on current slide
-      currentSlideWords.push(word);
-      currentSlideLines = testLines;
+    remoteLog(`Iteration ${iteration}
+-----------
+Candidate Height: ${h}px
+Status: ${fits ? 'Fits' : 'Overflow'}`);
+
+    if (!fits) {
+      const currentWordIndex = words.indexOf(word, iteration - 1);
+      const remaining = words.slice(currentWordIndex).join(' ');
+
+      remoteLog(`Action:
+Finalize Slide ${slideTexts.length + 1}
+
+Remaining Words:
+"${remaining}"`);
+
+      // This word causes the slide to overflow → commit current buffer
+      slideTexts.push(buffer.join(' '));
+      buffer = [word];
     } else {
-      // Word doesn't fit, create new slide with current words
-      console.log('[VerseRenderer] Creating new slide, current words:', currentSlideWords.length);
-      if (currentSlideWords.length > 0) {
-        slides.push({
-          text: currentSlideWords.join(' '),
-          verseNumber,
-          slideNumber: slides.length + 1,
-          totalSlides: 0,
-        });
-      }
-      // Start new slide with this word
-      currentSlideWords = [word];
-      currentSlideLines = wrapText(word, maxWidth, fontSize, fontFamily);
+      // Word fits
+      buffer = candidate.split(' ');
     }
   }
 
-  // Add final slide if it has content
-  if (currentSlideWords.length > 0) {
-    slides.push({
-      text: currentSlideWords.join(' '),
-      verseNumber,
-      slideNumber: slides.length + 1,
-      totalSlides: 0,
-    });
+  // Commit the last buffer
+  if (buffer.length > 0) {
+    remoteLog(`Action:
+Finalize Slide ${slideTexts.length + 1}`);
+    slideTexts.push(buffer.join(' '));
   }
 
-  // Update total slides count
-  const totalSlides = slides.length;
-  slides.forEach(slide => slide.totalSlides = totalSlides);
-
-  console.log('[VerseRenderer] Final slides:', totalSlides, slides.map(s => ({ text: s.text.substring(0, 30) + '...', words: s.text.split(' ').length })));
-
-  return slides;
-}
-
-/**
- * Main entry point.
- * Renders a verse into one or more slides that fit the presentation overlay.
- * Auto-scales font size if text doesn't fit, and calculates dynamic padding.
- */
-export function renderVerseForPresentation(
-  text:       string,
-  verseNumber: string,
-  fontSize:   number = 46,
-  lineHeight: number = 1.5,
-  fontFamily: string = 'Crimson Text, serif',
-  scale:      number = 1,
-): VerseRenderResult {
-  const { width: maxWidth, height: totalAvailableHeight } = getAvailableTextArea(scale);
-  const maxFontSize = 52;
-  const minFontSize = 24;
-  const minPadding = 1;
-
-  // Auto-scale font size if text doesn't fit
-  let scaledFontSize = Math.min(fontSize, maxFontSize);
-  let fullHeight = measureTextHeight(text, scaledFontSize, fontFamily, lineHeight, maxWidth);
-
-  while (fullHeight > (totalAvailableHeight - minPadding * 2) && scaledFontSize > minFontSize) {
-    scaledFontSize -= 2;
-    fullHeight = measureTextHeight(text, scaledFontSize, fontFamily, lineHeight, maxWidth);
-  }
-
-  // Calculate dynamic padding to center text
-  // Use fixed small padding to prevent overflow
-  const dynamicPadding = 1; // Fixed small padding
-  const textAvailableHeight = totalAvailableHeight - dynamicPadding * 2;
-
-  console.log('[VerseRenderer] Dynamic calculation:', {
-    totalAvailableHeight,
-    fullHeight,
-    dynamicPadding,
-    scaledFontSize,
-    fontSize
+  remoteLog(`\nSlides Generated: ${slideTexts.length}\n`);
+  slideTexts.forEach((slide, i) => {
+    const wordCount = slide.split(/\s+/).length;
+    remoteLog(`Slide ${i + 1}
+--------
+${wordCount} words`);
   });
 
-  if (fullHeight <= textAvailableHeight) {
-    return {
-      slides: [{ text, verseNumber, slideNumber: 1, totalSlides: 1 }],
-      requiresSplitting: false,
-      scaledFontSize,
-      dynamicPaddingTop: dynamicPadding,
-      dynamicPaddingBottom: dynamicPadding,
-    };
-  }
+  document.body.removeChild(el);
 
-  const slides = splitVerseIntoSlides(
-    text, verseNumber, textAvailableHeight, maxWidth, scaledFontSize, lineHeight, fontFamily,
-  );
+  return buildResult(slideTexts, verseNumber);
+}
 
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+
+function singleSlide(text: string, verseNumber: string): VerseRenderResult {
   return {
-    slides,
-    requiresSplitting: true,
-    scaledFontSize,
-    dynamicPaddingTop: dynamicPadding,
-    dynamicPaddingBottom: dynamicPadding,
+    slides: [{ text, verseNumber, slideNumber: 1, totalSlides: 1 }],
+    requiresSplitting: false,
   };
 }
 
+function buildResult(slideTexts: string[], verseNumber: string): VerseRenderResult {
+  const total = slideTexts.length;
+  const slides: VerseSlide[] = slideTexts.map((text, i) => ({
+    text,
+    verseNumber,
+    slideNumber: i + 1,
+    totalSlides: total,
+  }));
+  return { slides, requiresSplitting: total > 1 };
+}
+
 /**
- * Quick check: does this verse require splitting at this font size?
+ * Server-side / font-not-loaded estimation.
+ * Word-aware, never cuts mid-word.
+ * Uses 0.5 × fontSize as an average character width (conservative for Crimson Text).
+ * For Devanagari-heavy text uses 0.6 × fontSize.
+ */
+function estimateSplit(
+  text: string,
+  verseNumber: string,
+  frame: PresentationFrame,
+): VerseRenderResult {
+  const devanagariRatio =
+    ((text.match(/[\u0900-\u097F]/g) || []).length) /
+    Math.max(1, text.replace(/\s/g, '').length);
+  const avgCharWidth = frame.fontSize * (devanagariRatio > 0.3 ? 0.6 : 0.5);
+  const charsPerLine = Math.max(1, Math.floor(frame.quoteWidth / avgCharWidth));
+  const maxLines     = Math.max(1, Math.floor(frame.quoteHeight / (frame.fontSize * frame.lineHeight)));
+
+  const words    = text.trim().split(/\s+/);
+  const lines: string[] = [];
+  let   line     = '';
+
+  for (const word of words) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (line && candidate.length > charsPerLine) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = candidate;
+    }
+  }
+  if (line) lines.push(line);
+
+  const totalSlides = Math.ceil(lines.length / maxLines);
+  if (totalSlides <= 1) return singleSlide(text, verseNumber);
+
+  const slideTexts: string[] = [];
+  for (let i = 0; i < totalSlides; i++) {
+    slideTexts.push(lines.slice(i * maxLines, (i + 1) * maxLines).join(' '));
+  }
+  return buildResult(slideTexts, verseNumber);
+}
+
+/**
+ * Quick estimate: does this verse require splitting at this frame?
  */
 export function requiresVerseSplitting(
-  text:       string,
-  fontSize:   number = 46,
-  lineHeight: number = 1.5,
-  fontFamily: string = 'Crimson Text, serif',
+  text: string,
+  frame: PresentationFrame,
 ): boolean {
-  const { width: maxWidth, height: availableHeight } = getAvailableTextArea();
-  return measureTextHeight(text, fontSize, fontFamily, lineHeight, maxWidth) > availableHeight;
+  const avgCharWidth = frame.fontSize * 0.5;
+  const charsPerLine = Math.max(1, Math.floor(frame.quoteWidth / avgCharWidth));
+  const maxLines     = Math.max(1, Math.floor(frame.quoteHeight / (frame.fontSize * frame.lineHeight)));
+  const words = text.trim().split(/\s+/);
+  let lines = 1, len = 0;
+  for (const w of words) {
+    if (len > 0 && len + w.length + 1 > charsPerLine) { lines++; len = w.length; }
+    else len += (len > 0 ? 1 : 0) + w.length;
+  }
+  return lines > maxLines;
 }

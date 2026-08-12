@@ -5,7 +5,7 @@ import { useBible, splitVerseToSlides } from '../context/BibleContext';
 import { addToBibleSetlist } from './BibleSetlist';
 
 export const BibleReader: React.FC = () => {
-  const { state, setLocation, setReadingVerse, setReadingSlide, toggleLiveVerse, setPresentationSlide } = useBible();
+  const { state, setLanguage, setLocation, setReadingVerse, setReadingSlide, toggleLiveVerse, setPresentationSlide } = useBible();
   const { bibleFull, bibleIndex, language, currentBook, currentChapter, currentVerse, readingVerseIndex, readingSlideIndex, liveVerseIndex, presentationSlideIndex, presentationTotalSlides, justNavigatedFromSearch } = state;
   
   const contentRef = useRef<HTMLDivElement>(null);
@@ -48,6 +48,23 @@ export const BibleReader: React.FC = () => {
         });
       });
     });
+
+    // ── DIAGNOSTIC LOG ── remove after debugging ─────────────────────────────
+    const fontReady = typeof document !== 'undefined' && document.fonts
+      ? document.fonts.check('42px "Crimson Text"')
+      : false;
+    console.log('[BibleReader] Font ready:', fontReady);
+    console.log('[BibleReader] displayItems for verse 1:', JSON.stringify(
+      items.filter(i => i.verseNum === '1').map(i => ({
+        verse: i.verseNum,
+        slide: i.slideNumber,
+        totalSlides: i.totalSlides,
+        text: i.text.slice(0, 60) + (i.text.length > 60 ? '...' : ''),
+      })),
+      null, 2
+    ));
+    console.log('[BibleReader] Total cards in DOM:', items.length);
+    // ── END DIAGNOSTIC ───────────────────────────────────────────────────────
 
     return items;
   }, [currentChapterData]);
@@ -163,6 +180,8 @@ export const BibleReader: React.FC = () => {
       
       if (cmd.action === 'slideChanged') {
         setPresentationSlide(cmd.data.index, cmd.data.total);
+      } else if (cmd.action === 'slideInfo') {
+        setPresentationSlide(cmd.data.currentIndex, cmd.data.totalSlides);
       }
     };
 
@@ -252,6 +271,48 @@ export const BibleReader: React.FC = () => {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {/* Language Toggle */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <button
+              onClick={() => setLanguage('en')}
+              style={{
+                padding: '6px 10px',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-sm)',
+                background: language === 'en' ? 'var(--bg-active)' : 'var(--bg-card)',
+                color: language === 'en' ? 'var(--text-primary)' : 'var(--text-muted)',
+                cursor: 'pointer',
+                fontSize: '12px',
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                fontFamily: "'Noto Sans', sans-serif",
+                transition: 'all 0.12s',
+              }}
+              title="English"
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('hi')}
+              style={{
+                padding: '6px 10px',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-sm)',
+                background: language === 'hi' ? 'var(--bg-active)' : 'var(--bg-card)',
+                color: language === 'hi' ? 'var(--text-primary)' : 'var(--text-muted)',
+                cursor: 'pointer',
+                fontSize: '12px',
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                fontFamily: "'Noto Sans', sans-serif",
+                transition: 'all 0.12s',
+              }}
+              title="Hindi"
+            >
+              HI
+            </button>
+          </div>
+
           {/* Chapter Navigation */}
           <button
             onClick={handlePreviousChapter}
@@ -264,14 +325,14 @@ export const BibleReader: React.FC = () => {
               color: 'var(--text-dim)',
               cursor: canGoPrevious ? 'pointer' : 'not-allowed',
               opacity: canGoPrevious ? 1 : 0.5,
-              fontSize: '12px',
+              fontSize: '14px',
               display: 'flex',
               alignItems: 'center',
               gap: '4px'
             }}
             title="Previous chapter (←)"
           >
-            ← Prev
+            ←
           </button>
           <button
             onClick={handleNextChapter}
@@ -284,14 +345,14 @@ export const BibleReader: React.FC = () => {
               color: 'var(--text-dim)',
               cursor: canGoNext ? 'pointer' : 'not-allowed',
               opacity: canGoNext ? 1 : 0.5,
-              fontSize: '12px',
+              fontSize: '14px',
               display: 'flex',
               alignItems: 'center',
               gap: '4px'
             }}
             title="Next chapter (→)"
           >
-            Next →
+            →
           </button>
         </div>
       </div>
@@ -333,7 +394,7 @@ export const BibleReader: React.FC = () => {
                 alignItems: 'flex-start',
                 justifyContent: 'space-between',
                 padding: '8px 12px 10px',
-                fontFamily: "'Crimson Text', serif",
+                fontFamily: "'Noto Serif', serif",
                 fontSize: '15px',
                 lineHeight: 1.65,
                 color: isLive ? '#d4f7e4' : (isReading ? 'var(--text-primary)' : 'var(--text-muted)'),
