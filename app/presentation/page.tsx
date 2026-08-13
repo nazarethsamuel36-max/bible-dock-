@@ -171,40 +171,9 @@ function PresentationContent() {
 
   const reference = activeVerse ? `${activeVerse.book} ${activeVerse.chapter}:${activeVerse.verse}` : '';
   const currentSlide = renderedSlides[currentSlideIndex] || null;
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  // Track viewport dimensions (for OBS sizing)
-  useEffect(() => {
-    const updateDimensions = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
-    };
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
-    return () => window.removeEventListener('resize', updateDimensions);
-  }, []);
 
   return (
     <div className={`presentation-canvas-container ${isBanner ? 'banner-mode' : ''}`}>
-      {/* Dimension display for OBS sizing */}
-      <div style={{
-        position: 'fixed',
-        top: '10px',
-        right: '10px',
-        background: 'rgba(0, 0, 0, 0.7)',
-        color: '#fff',
-        padding: '8px 12px',
-        borderRadius: '4px',
-        fontSize: '14px',
-        fontFamily: 'monospace',
-        zIndex: 1000,
-        pointerEvents: 'none'
-      }}>
-        {dimensions.width} × {dimensions.height}
-      </div>
-
       {/* Background Image (Rendered only if ?preview=true parameter is set, otherwise transparent for OBS keying) */}
       {isPreview && (
         <>
