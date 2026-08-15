@@ -75,7 +75,6 @@ export default function LandingPage() {
             padding: '32px',
             backdropFilter: 'blur(10px)'
           }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🎛️</div>
             <h2 style={{
               fontSize: '24px',
               fontWeight: 700,
@@ -158,7 +157,6 @@ export default function LandingPage() {
             padding: '32px',
             backdropFilter: 'blur(10px)'
           }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📺</div>
             <h2 style={{
               fontSize: '24px',
               fontWeight: 700,

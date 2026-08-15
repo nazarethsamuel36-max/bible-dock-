@@ -141,8 +141,10 @@ html, body {
   font-weight: 600;
   letter-spacing: 0.1em;
   font-size: 52px;
-  font-family: var(--metadata-font-family, 'Noto Sans', sans-serif);
+  font-family: 'Noto Sans', sans-serif;
   font-style: normal;
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
   line-height: 1.0;
 }
 
@@ -192,11 +194,5 @@ html, body {
 }
 
 .overlay-quote-container::after {
-  content: '';
-  position: absolute;
-  left: var(--quote-padding-left, 60px);
-  bottom: 6px;
-  width: 140px;
-  height: 4px;
-  background: rgba(255,255,255,0.55);
+  content: none;
 }
