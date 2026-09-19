@@ -18,7 +18,53 @@ export const BibleSearch: React.FC = () => {
   
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [inputValue, setInputValue] = useState('');
+  const [isCopiedGeneral, setIsCopiedGeneral] = useState(false);
+  const [isCopiedTimeSpecific, setIsCopiedTimeSpecific] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const serviceInfo = useMemo(() => {
+    const now = new Date();
+    const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    const day = String(istTime.getDate()).padStart(2, '0');
+    const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(istTime);
+    const year = istTime.getFullYear();
+    const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(istTime);
+
+    const hour = istTime.getHours();
+    let timeSlot = 'Evening';
+    if (hour >= 6 && hour < 12) {
+      timeSlot = 'Morning';
+    } else if (hour >= 12 && hour < 18) {
+      timeSlot = 'Afternoon';
+    }
+
+    return {
+      dateLabel: `${day}-${month}-${year}`,
+      weekday,
+      timeSlot,
+      general: `${day}-${month}-${year} | ${weekday} Service`,
+      withTime: `${day}-${month}-${year} | ${weekday} ${timeSlot} Service`,
+    };
+  }, []);
+
+  const handleCopyText = useCallback(async (text: string, setter: (value: boolean) => void) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = text;
+      tempTextArea.setAttribute('readonly', 'true');
+      tempTextArea.style.position = 'fixed';
+      tempTextArea.style.left = '-9999px';
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempTextArea);
+    }
+
+    setter(true);
+    window.setTimeout(() => setter(false), 1400);
+  }, []);
 
   // Sync input with state
   useEffect(() => {
@@ -239,6 +285,120 @@ export const BibleSearch: React.FC = () => {
             title="Search / Go"
           >
             🔍
+          </button>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <textarea
+            readOnly
+            value={serviceInfo.general}
+            rows={1}
+            onFocus={(event) => event.currentTarget.select()}
+            style={{
+              flex: 1,
+              width: '100%',
+              minHeight: '38px',
+              padding: '10px 12px',
+              fontSize: '12px',
+              fontWeight: 600,
+              fontFamily: 'Inter, sans-serif',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-sm)',
+              color: 'var(--text-primary)',
+              resize: 'none',
+              outline: 'none',
+              lineHeight: 1.4,
+              boxSizing: 'border-box'
+            }}
+          />
+          <button
+            onClick={() => handleCopyText(serviceInfo.general, setIsCopiedGeneral)}
+            style={{
+              height: '38px',
+              padding: '0 12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-sm)',
+              color: 'var(--text-primary)',
+              cursor: 'pointer',
+              fontSize: '12px',
+              fontWeight: 600,
+              transition: 'background 0.1s, border-color 0.1s'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'var(--bg-hover)';
+              e.currentTarget.style.borderColor = 'var(--border-mid)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'var(--bg-card)';
+              e.currentTarget.style.borderColor = 'var(--border)';
+            }}
+            title="Copy general service title"
+          >
+            {isCopiedGeneral ? 'Copied!' : 'Copy'}
+          </button>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <textarea
+            readOnly
+            value={serviceInfo.withTime}
+            rows={1}
+            onFocus={(event) => event.currentTarget.select()}
+            style={{
+              flex: 1,
+              width: '100%',
+              minHeight: '38px',
+              padding: '10px 12px',
+              fontSize: '12px',
+              fontWeight: 600,
+              fontFamily: 'Inter, sans-serif',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-sm)',
+              color: 'var(--text-primary)',
+              resize: 'none',
+              outline: 'none',
+              lineHeight: 1.4,
+              boxSizing: 'border-box'
+            }}
+          />
+          <button
+            onClick={() => handleCopyText(serviceInfo.withTime, setIsCopiedTimeSpecific)}
+            style={{
+              height: '38px',
+              padding: '0 12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-sm)',
+              color: 'var(--text-primary)',
+              cursor: 'pointer',
+              fontSize: '12px',
+              fontWeight: 600,
+              transition: 'background 0.1s, border-color 0.1s'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'var(--bg-hover)';
+              e.currentTarget.style.borderColor = 'var(--border-mid)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'var(--bg-card)';
+              e.currentTarget.style.borderColor = 'var(--border)';
+            }}
+            title="Copy time-based service title"
+          >
+            {isCopiedTimeSpecific ? 'Copied!' : 'Copy'}
           </button>
         </div>
       </div>
