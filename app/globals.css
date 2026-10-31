@@ -184,7 +184,7 @@ html, body {
   color: #ffffff;
   font-family: var(--quote-font-family, 'Noto Serif', serif);
   font-style: normal;
-  text-align: left;
+  text-align: center;
   text-wrap: balance;
   white-space: normal;
   word-wrap: break-word;
